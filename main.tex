@@ -9,16 +9,20 @@
 \usepackage{slashed}
 \usepackage{pgfplots}
 \usepackage{booktabs, longtable}
+\usepackage{microtype}
 \bibliographystyle{JHEP.bst}
 
 \newcommand{\Shufang}[1]{{\bf\color{Maroon}  #1}}
 \newcommand{\Adarsh}[1]{{\bf\color{RoyalBlue} AP: #1}}
 \newcommand{\ap}[1]{\textcolor{RoyalBlue}{#1}}
 \renewcommand{\H}{\widetilde{H}^0}
+\newcommand{\W}{\widetilde{W}^0}
 \newcommand{\B}{\widetilde{B}^0}
 \newcommand{\N}{\widetilde{\chi}^0}
 \newcommand{\C}{\widetilde{\chi}^\pm}
-\newcommand{\image}[2]{\parbox{#1\textwidth}{\includegraphics[width=#1\textwidth]{images/#2.pdf}}}
+\newcommand{\image}[2]{\parbox{#1\textwidth}{%
+\includegraphics[width=#1\textwidth]{images/#2.pdf}}
+}
 \newcommand{\met}{{\slashed{E}_T}}
 
 
@@ -120,18 +124,18 @@ luminosities at a 100 TeV $pp$ collider.
 
 Since the Bino is the only supersymmetric particle lighter than the Higgsino in
 the mass hierarchy we consider, the neutral Higgsino will decay to a Bino and a
-neutral SM boson (\emph{Z/h}) with a branching ratio of 100\%.  Searches for
+neutral SM boson (\emph{Z/h}) with a branching fraction of 100\%.  Searches for
 Higgsino NLPs with a Bino LSP  via  multi-lepton final states have been studied
 in Ref.~\cite{Gori:2014oua} at a 100 TeV $pp$ collider, for pair production of
 $\N_{2,3}\C_1$ and
 $\widetilde\chi_{1}^+\widetilde\chi_1^-$. In this paper, we attempt to exploit
-the relatively high branching ratio of the SM Higgs boson to \emph{b} quarks,
-and study the potential of the channel of $\N_2\N_3\rightarrow Zh
-\N_1\N_1\rightarrow bb\ell\ell \met$.
+the relatively high branching fraction of the SM Higgs boson to \emph{b} quarks,
+and study the potential of the $\N_2\N_3\rightarrow Zh
+\N_1\N_1\rightarrow bb\ell\ell \met$ channel.
 
 % Why a 100 TeV collider?
 A 100 TeV $pp$ collider would open up an immense number of physics
-opportunities not afforded to a 14 TeV LHC, including exploring the most
+opportunities not afforded to the 14 TeV LHC, including exploring the most
 interesting regions of the split SUSY parameter space
 \cite{Arkani-Hamed:2015vfh}.
 % Status of 100 TeV planning
@@ -139,7 +143,7 @@ Such a collider would be a natural next step after the LHC, and is being
 actively discussed in the particle physics community, with two major proposals
 being the Future Circular Collider (FCC)-hh by CERN \cite{FCC-hh}, and the
 Super Proton Proton Collider (SppC)  in China \cite{CEPC}.  As the next energy
-frontier machine, it is of crucial importance to fully explore the physics
+frontier machine, it is crucial to fully explore the physics
 potential of a 100 TeV $pp$ collider, especially for new particles that are
 either too heavy or too rare to be produced at the
 LHC~\cite{Arkani-Hamed:2015vfh,Contino:2016spe,Golling:2016gvc,Mangano:2016jyj}.
@@ -162,14 +166,14 @@ With the advent of more powerful computers and simultaneous advances in
 the field of statistical learning in recent years, the usage of ML is
 rising in experimental particle physics -- in fact, the discovery of the
 SM Higgs boson in 2012 was done with the help of neural networks
-\cite{Aad:2012tfa} and boosted decision trees (BDT)
+\cite{Aad:2012tfa} and boosted decision trees (BDTs)
 \cite{Chatrchyan:2012xdj}.
 
 The rest of the paper is structured as follows. In Sec.~\ref{sec:model}, we
 describe our model and search channel in more detail, and list the existing
 experimental search bounds. In Sec.~\ref{sec:analysis}, we describe our
 analysis strategies for both traditional cut-and-count analyses and analyses
-performed using BDT. In Sec.~\ref{sec:results}, we present the results of our
+performed using BDTs. In Sec.~\ref{sec:results}, we present the results of our
 analyses, i.e. the expected 5 $\sigma$ discovery and 95\% C.L. exclusion
 reaches. Finally, we conclude with the implications in
 Sec.~\ref{sec:conclusion}.
@@ -180,11 +184,11 @@ Sec.~\ref{sec:conclusion}.
  
 The neutralino sector of MSSM consists of four mass eigenstates
 ($\N_1,\N_2,\N_3,\N_4$), which are mixtures of the Bino, Wino, and two neutral
-Higgsinos: ($\B,\widetilde{W}^0,\H_d,\H_u$). In the basis of these gauge
+Higgsinos: ($\B,\W,\H_d,\H_u$). In the basis of these gauge
 eigenstates, the mass matrix of the neutralinos can be written as
 
 \newcommand{\cb}{ c_\beta}
-\newcommand{\cw}{ c_W}
+\newcommand{\cw}{ c_{\theta_W}}
 \newcommand{\sinb}{ s_\beta}
 \newcommand{\sw}{ s_W}
 \newcommand{\mz}{ m_Z}
@@ -199,17 +203,15 @@ eigenstates, the mass matrix of the neutralinos can be written as
   \end{pmatrix},
 \end{align}
 
-\noindent where we employ the notation $s_W, c_W = \sin\theta_W, \cos\theta_W$
-for $\theta_W$ being the Weinberg mixing angle. $s_\beta, c_\beta$ are defined
-accordingly with $\tan\beta= v_u/v_d$, where $v_u$ and $v_d$ are the vacuum
+\noindent where we employ the notation $s_\theta, c_\theta = \sin\theta, \cos\theta$. Here,  $\theta_W$ is the Weinberg mixing angle, 
+and $\tan\beta= v_u/v_d$, where $v_u$ and $v_d$ are the vacuum
 expectation values of $H_u^0$ and $H_d^0$, with $v_u^2+v_d^2=v^2=(246\ {\rm
 GeV})^2$. The parameters $M_1$, $M_2$, and $\mu$ are the mass parameters of
-Bino, Wino, and Higgsinos.  The mass eigenstates are usually labeled as
-$\chi_i^0$ for $i=1 \ldots 4$ with increasing mass eigenvalues.
-
-In the limit of $\mz \ll |\mu\pm M_1|, |\mu\pm M_2|,$ the mass eigenstates
+the Bino, Wino, and the Higgsino, respectively.
+The mass eigenstates are labeled as $\N_i$ for $i=1 \ldots 4$ with increasing mass eigenvalues.
+In the limit where $\mz \ll |\mu\pm M_1|, |\mu\pm M_2|,$ the mass eigenstates
 are, to good approximation, a nearly pure Bino, $\B$, with mass $M_1$,
-a nearly pure Wino, $\widetilde{W}^0$, with mass $M_2$, and nearly pure Higgsinos
+a nearly pure Wino, $\W$, with mass $M_2$, and nearly pure Higgsinos
 $\H_{1,2} = (\H_u \pm \H_d)/\sqrt{2}$, with mass
 $|\mu|$. 
 
@@ -246,19 +248,19 @@ is the lightest neutralino, and $V$ being any of the SM gauge bosons $W$, $Z$
 or scalar $h$.  These searches work well since the large mass difference
 between the electroweakinos can lead to energetic leptons that can be easily
 identified. Among the multi-lepton searches for Higgsinos, the trilepton
-searches: $\N_{2,3}\C_1\pm\rightarrow WZ\N_1\N_1\rightarrow \ell\ell\ell +
+searches: $\N_{2,3}\C_1\rightarrow WZ\N_1\N_1\rightarrow \ell\ell\ell +
 \met$, with $\ell=e, \ \mu$,  have the best reach, due to the relatively high
 production cross-section of chargino-neutralino pairs combined with the large
-reduction in $t\overline{t}$ and QCD backgrounds obtained by requiring three
+reduction in $t\overline{t}$ and QCD backgrounds from requiring three
 leptons.  Higgsino NLSPs can be excluded at 95\% C.L. with mass up to 2.8 TeV
-or be discovered with  mass up to 1.8 TeV, for a massless Bino LSP.   The reach
-reduces for larger $M_1$, which vanishes for $M_1\gtrsim 600$ GeV (1000 GeV)
-for discovery (exclusion).    Multilepton searches with \emph{Zh} and \emph{ZZ}
+or be discovered with  mass up to 1.8 TeV, for a massless Wino LSP.   The reach
+reduces for larger $M_1$, and vanishes for $M_1\gtrsim 600$ GeV (1000 GeV)
+for discovery (exclusion).  Multilepton searches with \emph{Zh} and \emph{ZZ}
 as the intermediate dibosons are unlikely to be as powerful, due to the smaller
 pair-production cross-section of neutral Higgsinos, combined with the low
-branching ratio of \emph{Z/h} to leptons. However, if we move beyond
+branching fraction of \emph{Z/h} to leptons. However, if we move beyond
 multilepton searches, the channel with \emph{Zh} (originally suggested in
-\cite{Han:2013kza}) as the intermediate dibosons emerges as a possible
+Ref.~\cite{Han:2013kza}) as the intermediate dibosons emerges as a possible
 competitor to the \emph{WZ} channel.  
 
 
@@ -266,7 +268,7 @@ In the left panel of Fig.~\ref{fig:xsection_plot}, we show the pair-production
 cross section $\N_2\N_3$ for the Higgsino-like NLSPs.  The cross section varies
 between 200 fb to 0.5 fb for Higgsino masses between 500 GeV and 2500 GeV. The
 right panel of Fig.~\ref{fig:xsection_plot} shows the decay branching fractions
-of $\chi_{2,3}^0\rightarrow Z/h \chi_1^0$, as calculated in SUSY-HIT
+of $\chi_{2,3}^0\rightarrow Z/h \chi_1^0$, as calculated by SUSY-HIT
 \cite{Djouadi:2006bz}.  While one of the Higgsinos mostly decays to $Z$, the
 other Higgsino mostly decays to $h$.    Therefore,  for pair produced Higgsinos
 $\N_2\N_3$, the \emph{Zh} mode has the greatest branching fraction.  After
@@ -276,8 +278,8 @@ multiplying all the branching fractions, the signal cross sections of
   pp\rightarrow \N_2\N_3\rightarrow (Z\N_1)(h\N_1)\rightarrow bb\ell\ell \N_1\N_1.
 \end{align}
 
-\noindent become comparable  to trilepton processes, as shown in table
-\ref{tab:xsections}. $Zh+\met$ signal thus provide an alternative discovery
+\noindent become comparable  to trilepton processes, as shown in Table
+\ref{tab:xsections}. Thus, the $Zh+\met$ signal provides an alternative discovery
 channel for Higgsinos. The signal contains two \emph{b}-jets, two same flavor,
 opposite sign leptons, and missing transverse energy. The main backgrounds for
 this process are: $t\overline{t}$, \emph{tbW} with the $b$ and $W$ not coming
@@ -317,7 +319,7 @@ from a \emph{t}, and \emph{bbWW} with no intermediate $s$-channel top quarks.
     \cite{Gori:2014oua}, while the pair-production cross-section for $\N_2\N_3$
     is calculated at Next-to-Leading Order (NLO) using Prospino2. The branching
     ratios to the diboson intermediate states are calculated using SUSY-HIT,
-    and the branching ratios to the SM final states are taken from
+    and the branching fractions to the SM final states are taken from
     \cite{Olive:2016xmw}.}
   \label{tab:xsections}
 \end{table}
@@ -327,11 +329,10 @@ from a \emph{t}, and \emph{bbWW} with no intermediate $s$-channel top quarks.
 Searches for pair produced nearly mass-degenerate Higgsinos  have been
 performed at ATLAS and CMS for various decay  topologies
 \cite{Aaboud:2018htj,Sirunyan:2018ubx,Aaboud:2018zeb}.  
-For neutralino-chargino pair production with $WZ$ and $WH$ topologies, the 95\%
-C.L. exclusion limits are about 650 GeV, 490 GeV, and 535 GeV for $WZ$, $WH$
-and an equal mixture of $WZ+WH$ topology, with the most strongest limits from
-the multi-lepton searches.  For neutralino pair production with $ZZ$, $ZH$ and
-$HH$ topologies~\footnote{While such searches assume gravitino LSP with
+For neutralino-chargino pair production with \emph{WZ} and \emph{WH} topologies, the 95\%
+C.L. exclusion limits are about 650 GeV, 490 GeV, and 535 GeV for \emph{WZ}, \emph{WH}
+and an equal mixture of \emph{WZ}+\emph{WH} topology, with the strongest limits coming from
+the multi-lepton searches.  For neutralino pair production with \emph{ZZ, ZH}, and \emph{HH} topologies~\footnote{While such searches assume gravitino LSP with
 Higgsino NLSP, the limits are still relevant for our Higgsino NLSP with Bino
 LSP scenario.}, the limits are about 650 $-$ 750 GeV via multi-lepton or
 multi-$b$ jets searches, depending on the decay branching fractions of Higgsino
