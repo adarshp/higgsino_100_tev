@@ -425,8 +425,12 @@ M_T^R &= \sqrt{\frac{1}{2}\left[\slashed{E}_T(|\vec{p}_{ZT}|+|\vec{p}_{hT}|)
   $\slashed{E}_{T}$,  and  $m_{\ell^+\ell^-}$cuts.   
   \Shufang{BG generator level mll and MET cut (MET bigger tan 100 GeV), or cut
     level mll and MET cut (MET bigger than 400 GEV)? Both signal and
-  backgrounds?} The
-  distribution for the \emph{bbWW} background is not shown, since it is negligible in
+  backgrounds?} \Adarsh{The plots in figure 2 show distributions at the reconstructed level,
+  so they have the generator level cuts and the reconstructed level cuts. 
+  For the signal, no generator-level cuts are applied.
+  For the background, the $80 < m_{ll} < 100 $ GeV and  $\met > 100$ GeV
+  generator level cuts are applied.}
+  The distribution for the \emph{bbWW} background is not shown, since it is negligible in
   comparison to the others.   We can see that the distribution of $M_R$ is peaked
   around 1 TeV for the signal, which is consistent with what we would expect as
   it corresponds to the mass difference between the NLSP and LSP.  The $tt$
@@ -474,7 +478,8 @@ of 3000 fb$^{-1}$), shown in the last column.
 For each signal mass combination and each background process, we preselected
 events that passed the lepton trigger, contained two SFOS leptons and two
 $b$-tagged jets, and calculated a number of kinematic variables for each event.
-  \Shufang{So singal event does not have mll and MET parton level cuts while BG events have those two cuts. right?}   We then
+  \Shufang{So singal event does not have mll and MET parton level cuts 
+  while BG events have those two cuts. right?} \Adarsh{Right.}   We then
 placed these kinematic variables in an array, with each row corresponding to an
 event, and the columns corresponding to the kinematic variables. A mixture of
 low-level and high level kinematic variables was shown to have the greatest
@@ -542,9 +547,6 @@ the 95\% confidence interval for a Poisson distribution.
 \caption{ Discovery (red) and exclusion (blue) contours for the traditional
   cut-and-count analysis (solid) and boosted decision tree analysis (dashed),
   for 100 TeV $pp$ collider with an integrated luminosity of 3000 fb$^{-1}$.
-\Adarsh{  I could change the xlabel
-to $\mu$ instead of $|\mu|$, but isn't $|\mu|$ more accurate, since $\mu$ can
-be positive or negative?} \Shufang{Yes, change to $\mu$.  Sign of mu has a small effect.  Since we use positive mu, let's label it this way.}
 }
 
 \label{fig:contours}
