@@ -516,7 +516,7 @@
 \definecolor{textcolor}{rgb}{0.333333,0.333333,0.333333}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.181043in,y=0.288889in,,top]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle |\mu|\) \(\displaystyle \mathrm{(GeV)}\)}%
+\pgftext[x=2.181043in,y=0.288889in,,top]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont \(\displaystyle \mu\) \(\displaystyle \mathrm{(GeV)}\)}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfpathrectangle{\pgfqpoint{0.778333in}{0.599861in}}{\pgfqpoint{2.805419in}{3.138336in}} %
