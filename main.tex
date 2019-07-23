@@ -17,6 +17,7 @@
 \renewcommand{\H}{\widetilde{H}^0}
 \newcommand{\B}{\widetilde{B}^0}
 \newcommand{\N}{\widetilde{\chi}^0}
+\newcommand{\C}{\widetilde{\chi}^\pm}
 \newcommand{\image}[2]{\parbox{#1\textwidth}{\includegraphics[width=#1\textwidth]{images/#2.pdf}}}
 \newcommand{\met}{{\slashed{E}_T}}
 
@@ -57,59 +58,62 @@
 
 \section{Introduction}
  
-The existence of dark matter provides unambiguous evidence of new 
-physics beyond the Standard Model (SM) of particle physics. Indeed, 
-given that there is far more dark matter in the Universe than there 
-is baryonic matter, determining its precise nature is one of the most 
-exciting challenges in particle physics today.  One promising group 
-of candidate for dark matter is the class of stable particles known as 
-weakly interacting massive particles (WIMPs). These particles arise 
-naturally in many extensions of the SM that are motivated by the need to
-stabilize the electroweak scale. One of the most studied extensions
-to the SM is the Minimal Supersymmetric Standard Model
-(MSSM), which predicts a `supersymmetric partner', or \emph{superpartner}, 
-for each SM particle\footnote{For a detailed review of the MSSM, see 
-Ref. \cite{Martin:1997ns}.}. In the MSSM with \emph{R}-parity conservation, the 
-lightest supersymmetric partner (LSP) is predicted to be absolutely 
-stable, making it a good candidate for dark matter. The identity of 
-the LSP is determined by the mass hierarchy of the superpartners, 
-which in turn depends on how supersymmetry is broken.
-However, taking into account experimental constraints and phenomenological 
-considerations, the lightest of the  MSSM particles known as the 
-neutralinos emerges as the most attractive candidates for the LSP \cite{Bertone:2004pz}. 
+The existence of dark matter provides unambiguous evidence of new physics
+beyond the Standard Model (SM) of particle physics. Indeed, given that there is
+far more dark matter in the Universe than there is baryonic matter, determining
+its precise nature is one of the most exciting challenges in particle physics
+today.  One promising group of candidate for dark matter is the class of stable
+particles known as weakly interacting massive particles (WIMPs). These
+particles arise naturally in many extensions of the SM that are motivated by
+the need to stabilize the electroweak scale. One of the most studied extensions
+to the SM is the Minimal Supersymmetric Standard Model (MSSM), which predicts a
+`supersymmetric partner', or \emph{superpartner}, for each SM
+particle\footnote{For a detailed review of the MSSM, see Ref.
+\cite{Martin:1997ns}.}. In the MSSM with \emph{R}-parity conservation, the
+lightest supersymmetric partner (LSP) is predicted to be absolutely stable,
+making it a good candidate for dark matter. The identity of the LSP is
+determined by the mass hierarchy of the superpartners, which in turn depends on
+how supersymmetry is broken.  However, taking into account experimental
+constraints and phenomenological considerations, the lightest of the  MSSM
+particles known as the neutralinos emerges as the most attractive candidates
+for the LSP \cite{Bertone:2004pz}. 
 
  % Why go beyond the MSSM?
-Though a natural MSSM spectrum has the potential to tame the hierarchy
-problem, it is under siege from recent data from the Large Hadron
-Collider (LHC) \cite{Aaboud:2018ujj, Sirunyan:2018vjp}. 
-A compelling alternative scenario comes in the form of
-split supersymmetry (split SUSY) \cite{Wells:2003tf,
+Though a natural MSSM spectrum has the potential to tame the hierarchy problem,
+it is under siege from recent data from the Large Hadron Collider (LHC)
+\cite{Aaboud:2018ujj, Sirunyan:2018vjp}.  A compelling alternative scenario
+comes in the form of split supersymmetry (split SUSY) \cite{Wells:2003tf,
 ArkaniHamed:2004yi, Giudice:2004tc}. In this scenario, the lightest
-superpartners are the fermionic ones, on the
-scale of 1-10 TeV, while the scalar superpartners can be much heavier,
-on the scale of 100 - 1000 TeV. In exchange for accepting some level of
-fine-tuning, we obtain numerous benefits, including the suppression of
-flavor-changing neutral currents and greater compatibility with data
-from CP-violation experiments.  The low lying 
-fermionic superpartners consist of neutralinos and charginos (collectively
-known as electroweakinos), and gluinos. The current LHC search limits on
-gluinos are already around 2 TeV for prompt decay and 2.5 TeV for disappearing track searches~\cite{CMS-PAS-SUS-19-005}.   The
-limits on electroweakinos with heavy scalar superparticles,
-however, are still relatively weak: around 650 $-$ 750 GeV or  less~\cite{ATL-PHYS-PUB-2019-022, Sirunyan:2017lae,Aaboud:2018htj,Sirunyan:2018ubx,Aaboud:2018zeb}, depending on
-the decay modes of the parent electroweakinos and their species.  In this paper, we will
-focus on the discovery potential of the neutralinos and charginos at the 100
-TeV $pp$ collider. 
+superpartners are the fermionic ones, on the scale of 1-10 TeV, while the
+scalar superpartners can be much heavier, on the scale of 100 - 1000 TeV. In
+exchange for accepting some level of fine-tuning, we obtain numerous benefits,
+including the suppression of flavor-changing neutral currents and greater
+compatibility with data from CP-violation experiments.  The low lying fermionic
+superpartners consist of neutralinos and charginos (collectively known as
+electroweakinos), and gluinos. The current LHC search limits on gluinos are
+already around 2 TeV for prompt decay and 2.5 TeV for disappearing track
+searches~\cite{CMS-PAS-SUS-19-005}.   The limits on electroweakinos with heavy
+scalar superparticles, however, are still relatively weak: around 650 $-$ 750
+GeV or less~\cite{ATL-PHYS-PUB-2019-022, Sirunyan:2017lae, Aaboud:2018htj,
+Sirunyan:2018ubx, Aaboud:2018zeb}, depending on the decay modes of the parent
+electroweakinos and their species.  In this paper, we will focus on the
+discovery potential of the neutralinos and charginos at the 100 TeV $pp$
+collider. 
 
 % Point to review papers for enumeration of studies
-The decay patterns of the electroweakinos (Winos, Binos, and Higgsinos)
-depend on the hierarchy of the MSSM parameters $M_1, M_2$, and $\mu$~\footnote{For our study, we assume all the mass parameters are positive.  For the current analyses, the results do not depend much on the sign of those parameters.}, which 
-roughly determine the masses of the Bino, Winos, and Higgsinos, respectively~\cite{Han:2013kza}. 
-In this paper, we consider the Higgsino NLSP and Bino LSP scenario with $M_1 < \mu \ll M_2$.
-One of the motivations for studying Higgsinos is that the parameter $\mu$ 
-that governs its mass plays an important role in electroweak symmetry breaking~\cite{Acharya:2014pua}, which tends to be small by naturalness considerations.   Finding Higgsinos has traditionally been more challenging 
-than finding Winos, due to their smaller production rate. This, however, can 
-be remedied by the increased  production cross sections and luminosities 
-at a 100 TeV $pp$ collider.
+The decay patterns of the electroweakinos (Winos, Binos, and Higgsinos) depend
+on the hierarchy of the MSSM parameters $M_1, M_2$, and $\mu$~\footnote{For our
+study, we assume all the mass parameters are positive.  For the current
+analyses, the results do not depend much on the sign of those parameters.},
+which roughly determine the masses of the Bino, Winos, and Higgsinos,
+respectively~\cite{Han:2013kza}.  In this paper, we consider the Higgsino NLSP
+and Bino LSP scenario with $M_1 < \mu \ll M_2$.  One of the motivations for
+studying Higgsinos is that the parameter $\mu$ that governs its mass plays an
+important role in electroweak symmetry breaking~\cite{Acharya:2014pua}, which
+tends to be small by naturalness considerations.   Finding Higgsinos has
+traditionally been more challenging than finding Winos, due to their smaller
+production rate. This, however, can be remedied by the increased  production
+cross sections and luminosities at a 100 TeV $pp$ collider.
 
 
  
@@ -117,28 +121,32 @@ at a 100 TeV $pp$ collider.
 Since the Bino is the only supersymmetric particle lighter than the Higgsino in
 the mass hierarchy we consider, the neutral Higgsino will decay to a Bino and a
 neutral SM boson (\emph{Z/h}) with a branching ratio of 100\%.  Searches for
-Higgsino NLPs with a Bino LSP  via  multi-lepton final states have been
-studied in Ref.~\cite{Gori:2014oua} at a 100 TeV $pp$ collider, for pair production of $\widetilde\chi_{2,3}^0\widetilde\chi_1^\pm$ and  $\widetilde\chi_{1}^+\widetilde\chi_1^-$.    In this paper, we attempt to exploit the relatively high branching
-ratio of the SM Higgs boson to \emph{b} quarks, and study the potential of the channel of
-$\chi_2^0\chi_3^0\rightarrow Zh \chi_1^0\chi_1^0\rightarrow bb\ell\ell \met$.
+Higgsino NLPs with a Bino LSP  via  multi-lepton final states have been studied
+in Ref.~\cite{Gori:2014oua} at a 100 TeV $pp$ collider, for pair production of
+$\N_{2,3}\C_1$ and
+$\widetilde\chi_{1}^+\widetilde\chi_1^-$. In this paper, we attempt to exploit
+the relatively high branching ratio of the SM Higgs boson to \emph{b} quarks,
+and study the potential of the channel of $\N_2\N_3\rightarrow Zh
+\N_1\N_1\rightarrow bb\ell\ell \met$.
 
 % Why a 100 TeV collider?
 A 100 TeV $pp$ collider would open up an immense number of physics
-opportunities not afforded to a 14 TeV LHC, including exploring the
-most interesting regions of the split SUSY parameter space
+opportunities not afforded to a 14 TeV LHC, including exploring the most
+interesting regions of the split SUSY parameter space
 \cite{Arkani-Hamed:2015vfh}.
 % Status of 100 TeV planning
 Such a collider would be a natural next step after the LHC, and is being
-actively discussed in the particle physics community, with two major
-proposals being the Future Circular Collider (FCC)-hh by CERN \cite{FCC-hh}, and the Super Proton Proton Collider (SppC)  
-in China \cite{CEPC}.  As the next energy frontier machine, it is of 
-crucial importance to fully explore the physics potential of a 100 TeV $pp$
-collider, especially for new particles that are either too heavy or too rare 
-to be produced at the LHC~\cite{Arkani-Hamed:2015vfh,Contino:2016spe,Golling:2016gvc,Mangano:2016jyj}.
+actively discussed in the particle physics community, with two major proposals
+being the Future Circular Collider (FCC)-hh by CERN \cite{FCC-hh}, and the
+Super Proton Proton Collider (SppC)  in China \cite{CEPC}.  As the next energy
+frontier machine, it is of crucial importance to fully explore the physics
+potential of a 100 TeV $pp$ collider, especially for new particles that are
+either too heavy or too rare to be produced at the
+LHC~\cite{Arkani-Hamed:2015vfh,Contino:2016spe,Golling:2016gvc,Mangano:2016jyj}.
 In particular, studies have already been performed on the prospects of
-discovering neutralino dark matter for compressed \cite{Low:2014cba, diCortona:2014yua,Cirelli:2014dsa,Mahbubani:2018tin,Han:2018wus}
-and well-separated \cite{Gori:2014oua,Acharya:2014pua}
-neutralino spectra.
+discovering neutralino dark matter for compressed \cite{Low:2014cba,
+diCortona:2014yua,Cirelli:2014dsa,Mahbubani:2018tin,Han:2018wus} and
+well-separated \cite{Gori:2014oua,Acharya:2014pua} neutralino spectra.
 
 
 In our study, we use razor variables~\cite{Rogan:2010kb}, which were originally designed
@@ -157,22 +165,23 @@ SM Higgs boson in 2012 was done with the help of neural networks
 \cite{Aad:2012tfa} and boosted decision trees (BDT)
 \cite{Chatrchyan:2012xdj}.
 
-The rest of the paper is structured as follows. In Sec.~\ref{sec:model}, we describe our model and search channel in more
-detail, and list the existing experimental search bounds. In Sec.~\ref{sec:analysis}, we describe our analysis strategies 
-for both traditional cut-and-count analyses and analyses
-performed using BDT. In Sec.~\ref{sec:results},
-we present the results of our analyses, i.e. the expected 5 $\sigma$ discovery and 95\% C.L. exclusion
-reaches. Finally, we conclude with the implications in Sec.~\ref{sec:conclusion}.
+The rest of the paper is structured as follows. In Sec.~\ref{sec:model}, we
+describe our model and search channel in more detail, and list the existing
+experimental search bounds. In Sec.~\ref{sec:analysis}, we describe our
+analysis strategies for both traditional cut-and-count analyses and analyses
+performed using BDT. In Sec.~\ref{sec:results}, we present the results of our
+analyses, i.e. the expected 5 $\sigma$ discovery and 95\% C.L. exclusion
+reaches. Finally, we conclude with the implications in
+Sec.~\ref{sec:conclusion}.
 
 \section{The neutralino sector of the MSSM}
 \label{sec:model}
 
  
 The neutralino sector of MSSM consists of four mass eigenstates
-($\N_1,\N_2,\N_3,\N_4$), which
-are mixtures of the Bino, Wino, and two neutral Higgsinos: 
-($\B,\widetilde{W}^0,\H_d,\H_u$). In the basis of these gauge eigenstates, the mass
-matrix of the neutralinos can be written as
+($\N_1,\N_2,\N_3,\N_4$), which are mixtures of the Bino, Wino, and two neutral
+Higgsinos: ($\B,\widetilde{W}^0,\H_d,\H_u$). In the basis of these gauge
+eigenstates, the mass matrix of the neutralinos can be written as
 
 \newcommand{\cb}{ c_\beta}
 \newcommand{\cw}{ c_W}
@@ -180,16 +189,17 @@ matrix of the neutralinos can be written as
 \newcommand{\sw}{ s_W}
 \newcommand{\mz}{ m_Z}
 
-\begin{equation}
-\mathbf{M}_{\widetilde{N}}=
-\begin{pmatrix}
-  M_1 & 0 & -\cb\sw\mz & \sinb\sw\mz \\
-  0 & M_2 & \cb\cw\mz & -\sinb\cw\mz \\
-  -\cb\sw\mz & \cb\cw\mz & 0 & -\mu \\
-  \sinb\sw\mz & -\sinb\cw\mz & -\mu & 0
-\end{pmatrix},
-\end{equation}
-where we employ the notation $s_W, c_W = \sin\theta_W, \cos\theta_W$
+\begin{align}
+  \mathbf{M}_{\widetilde{N}}=
+  \begin{pmatrix}
+    M_1         & 0            & -\cb\sw\mz & \sinb\sw\mz \\
+    0           & M_2          & \cb\cw\mz  & -\sinb\cw\mz \\
+    -\cb\sw\mz  & \cb\cw\mz    & 0          & -\mu \\
+    \sinb\sw\mz & -\sinb\cw\mz & -\mu       & 0
+  \end{pmatrix},
+\end{align}
+
+\noindent where we employ the notation $s_W, c_W = \sin\theta_W, \cos\theta_W$
 for $\theta_W$ being the Weinberg mixing angle. $s_\beta, c_\beta$ are defined
 accordingly with $\tan\beta= v_u/v_d$, where $v_u$ and $v_d$ are the vacuum
 expectation values of $H_u^0$ and $H_d^0$, with $v_u^2+v_d^2=v^2=(246\ {\rm
@@ -204,65 +214,90 @@ $\H_{1,2} = (\H_u \pm \H_d)/\sqrt{2}$, with mass
 $|\mu|$. 
 
 The optimal search strategy for finding electroweakinos   highly depends on
-  their mass spectra \cite{Han:2013kza}.  Phenomenological collider studies on finding electroweakinos with a small mass splitting of about 0.1 - 50 GeV at a 100 TeV collider can be
-found in \cite{Low:2014cba, Bramante:2014tba, Berlin:2015aba, Cirelli:2014dsa},
-\Shufang{Say a few words about typical search strategy there.}
-\Adarsh{Yes, I focused more on well separated spectra since that is more similar to our case - should I add more details for the 0.1 - 50 GeV compressed spectra studies?} \Shufang{Add a couple sentences here of the search strategy for the small mass splitting case.}
-Well-separated spectra have been studied in \cite{Gori:2014oua,
-Acharya:2014pua} using
-multi-lepton channels, of the form 
+their mass spectra \cite{Han:2013kza}.  Phenomenological collider studies on
+finding electroweakinos with a small mass splitting of about 0.1 - 50 GeV at a
+100 TeV collider can be found in \cite{Low:2014cba, Bramante:2014tba,
+Berlin:2015aba, Cirelli:2014dsa}. The projected exclusion reaches for pure Wino
+LSPs (with a mass splitting of 164.6 MeV \cite{Ibe:2012sx}) at a 100 TeV
+collider using the monojet channel is $\sim1.4$~TeV.  The reach
+can be increased to $\sim3$ TeV using a disappearing tracks search.
+Neutralinos up to 1 TeV can be excluded for mass splittings of about 20-30 GeV,
+using a soft lepton search \cite{Low:2014cba}. Additionally, Bino-Wino LSPs
+with masses up to 1.5 TeV and $\sim 1$~GeV inter-state mass splitting can be
+discovered at a 100 TeV collider with $\sim7 \text{ab}^{-1}$ of data. 
+  
+  \Shufang{Say a few words about typical
+  search strategy there.} \Adarsh{Yes, I focused more on well separated spectra
+  since that is more similar to our case - should I add more details for the
+  0.1 - 50 GeV compressed spectra studies?} \Shufang{Add a couple sentences
+  here of the search strategy for the small mass splitting case.}
+  \Adarsh{I added a couple of sentences.}
+
+  Well-separated spectra have been studied in \cite{Gori:2014oua,
+  Acharya:2014pua} using multi-lepton channels, of the form 
+
 \begin{align}
   pp\rightarrow \widetilde{\chi}_i\widetilde{\chi}_j\rightarrow VV +
-  \widetilde{\chi}_1^0\widetilde{\chi}_1^0\rightarrow 2\ell/3\ell +  
-  \met,
+  \N_1\N_1\rightarrow 2\ell/3\ell + \met,
 \end{align}
-where $\widetilde{\chi}_{i,j}$ can be a neutralino or chargino,
-$\widetilde{\chi}_1^0$ is the lightest neutralino, and $V$ being any of the SM gauge bosons $W$, $Z$ or scalar $h$.  These searches work well since
-the large mass difference between the electroweakinos can lead to energetic
-leptons that can be easily identified. Among the multi-lepton searches for
-Higgsinos, the trilepton searches: $\widetilde\chi_{2,3}^0\widetilde\chi_1^\pm\rightarrow WZ\widetilde\chi_1^0\widetilde\chi_1^0\rightarrow \ell\ell\ell + \met$, with $\ell=e, \ \mu$,  have the best reach, due to the relatively high production cross-section of
-chargino-neutralino pairs combined with the large reduction in $t\overline{t}$
-and QCD backgrounds obtained by requiring three leptons.  Higgsino NLSPs can be excluded at 95\% C.L. with mass up to 2.8 TeV or be discovered with  mass up to 1.8 TeV, for a massless Bino LSP.   The reach reduces for larger $M_1$, which vanishes for $M_1\gtrsim 600$ GeV (1000 GeV) for discovery (exclusion).    Multilepton searches
-with \emph{Zh} and \emph{ZZ} as the intermediate dibosons are unlikely to be as powerful,
-due to the smaller pair-production cross-section of neutral Higgsinos, combined
-with the low branching ratio of \emph{Z/h} to leptons. However, if we move beyond
+
+\noindent where $\widetilde{\chi}_{i,j}$ can be a neutralino or chargino, $\N_1$
+is the lightest neutralino, and $V$ being any of the SM gauge bosons $W$, $Z$
+or scalar $h$.  These searches work well since the large mass difference
+between the electroweakinos can lead to energetic leptons that can be easily
+identified. Among the multi-lepton searches for Higgsinos, the trilepton
+searches: $\N_{2,3}\C_1\pm\rightarrow WZ\N_1\N_1\rightarrow \ell\ell\ell +
+\met$, with $\ell=e, \ \mu$,  have the best reach, due to the relatively high
+production cross-section of chargino-neutralino pairs combined with the large
+reduction in $t\overline{t}$ and QCD backgrounds obtained by requiring three
+leptons.  Higgsino NLSPs can be excluded at 95\% C.L. with mass up to 2.8 TeV
+or be discovered with  mass up to 1.8 TeV, for a massless Bino LSP.   The reach
+reduces for larger $M_1$, which vanishes for $M_1\gtrsim 600$ GeV (1000 GeV)
+for discovery (exclusion).    Multilepton searches with \emph{Zh} and \emph{ZZ}
+as the intermediate dibosons are unlikely to be as powerful, due to the smaller
+pair-production cross-section of neutral Higgsinos, combined with the low
+branching ratio of \emph{Z/h} to leptons. However, if we move beyond
 multilepton searches, the channel with \emph{Zh} (originally suggested in
 \cite{Han:2013kza}) as the intermediate dibosons emerges as a possible
 competitor to the \emph{WZ} channel.  
 
 
+In the left panel of Fig.~\ref{fig:xsection_plot}, we show the pair-production
+cross section $\N_2\N_3$ for the Higgsino-like NLSPs.  The cross section varies
+between 200 fb to 0.5 fb for Higgsino masses between 500 GeV and 2500 GeV. The
+right panel of Fig.~\ref{fig:xsection_plot} shows the decay branching fractions
+of $\chi_{2,3}^0\rightarrow Z/h \chi_1^0$, as calculated in SUSY-HIT
+\cite{Djouadi:2006bz}.  While one of the Higgsinos mostly decays to $Z$, the
+other Higgsino mostly decays to $h$.    Therefore,  for pair produced Higgsinos
+$\N_2\N_3$, the \emph{Zh} mode has the greatest branching fraction.  After
+multiplying all the branching fractions, the signal cross sections of 
 
-
-In the left panel of Fig.~\ref{fig:xsection_plot}, we show the pair-production cross section $\widetilde\chi_2^0\widetilde\chi_3^0$ for the Higgsino-like NLSPs.  The cross section varies between
-200 fb to 0.5 fb for Higgsino masses between 500 GeV and 2500 GeV. The right
-panel of Fig.~\ref{fig:xsection_plot} shows the decay branching fractions of
-$\chi_{2,3}^0\rightarrow Z/h \chi_1^0$, as calculated in SUSY-HIT \cite{Djouadi:2006bz}.
-While one of the Higgsinos mostly decays to $Z$, the other
-Higgsino mostly decays to $h$.    Therefore,  for pair produced Higgsinos $\widetilde\chi_2^0\widetilde\chi_3^0$, the \emph{Zh} mode has the greatest
-branching fraction.  After multiplying all the branching fractions, the signal cross sections of 
 \begin{align}
-pp\rightarrow \widetilde{\chi}_{2}^{0}\widetilde{\chi}_{3}^{0}\rightarrow
-(Z\widetilde{\chi}_1^{0})(h\widetilde{\chi}_1^{0})\rightarrow
-bb\ell\ell \chi_1^0\chi_1^0.
+  pp\rightarrow \N_2\N_3\rightarrow (Z\N_1)(h\N_1)\rightarrow bb\ell\ell \N_1\N_1.
 \end{align}
-become comparable  to trilepton processes, as shown in    table \ref{tab:xsections}.   $Zh+\met$ signal thus provide an alternative
-discovery channel for Higgsinos.   The signal contains two
-\emph{b}-jets, two same flavor, opposite sign leptons, and missing transverse
-energy. The main backgrounds for this process are: $t\overline{t}$, \emph{tbW} with
-the $b$ and $W$ not coming from a \emph{t}, and \emph{bbWW} with no intermediate
-$s$-channel top quarks.  
+
+\noindent become comparable  to trilepton processes, as shown in table
+\ref{tab:xsections}. $Zh+\met$ signal thus provide an alternative discovery
+channel for Higgsinos. The signal contains two \emph{b}-jets, two same flavor,
+opposite sign leptons, and missing transverse energy. The main backgrounds for
+this process are: $t\overline{t}$, \emph{tbW} with the $b$ and $W$ not coming
+from a \emph{t}, and \emph{bbWW} with no intermediate $s$-channel top quarks.  
 
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.49\textwidth]{images/xsection_plot.pdf}
   \includegraphics[width=0.49\textwidth]{images/br_plot.pdf}
-  \caption{Higgsino pair production $\widetilde\chi_2^0\widetilde\chi_3^0$
+  \caption{Higgsino pair production $\N_2\N_3$
     cross section (left panel), calculated using
     Prospino2~\cite{Beenakker:1999xh},  and decay branching fractions
     (right panel), calculated in SUSY-HIT~\cite{Djouadi:2006bz},  as a function
     of $\mu$ for $M_1=25$ GeV. However, it should be noted that the dependence
-    on $M_1$ is very weak.  \Shufang{Could you use $\mu$ for both xlabels?  The CS and Br will depend slightly on the sign of mu.  Since we do use positive mu in our analyses, let's label it this way.  I have a footnote in intro to explain the sign effect of mu.  Also, change right panel, ylabel to be either Br or Branching Fraction.}
+    on $M_1$ is very weak.  \Shufang{Could you use $\mu$ for both xlabels?  The
+    CS and Br will depend slightly on the sign of mu.  Since we do use positive
+  mu in our analyses, let's label it this way.  I have a footnote in intro to
+explain the sign effect of mu.  Also, change right panel, ylabel to be either
+Br or Branching Fraction.}
 }
   \label{fig:xsection_plot}
 \end{figure}
@@ -271,7 +306,7 @@ $s$-channel top quarks.
   \centering
   \begin{tabular}{l|rr}
     \toprule
-    Stage & $\N_{2,3}\widetilde{\chi}^\pm_{1}$ & $\N_2\N_3$\\
+    Stage & $\N_{2,3}\C_1$ & $\N_2\N_3$\\
     \midrule
     Pair production cross section & 60 fb & 17.2 fb\\
     Intermediate diboson contribution & ($WZ$) 29.7 fb  & ($Zh$) 9.15 fb \\
@@ -279,12 +314,15 @@ $s$-channel top quarks.
     \bottomrule
   \end{tabular}
   \caption{Comparison of Higgsino pair production cross-sections for
-    $(\widetilde{\chi}_{2,3}^0\widetilde{\chi}^\pm_{1})$ and
+    $(\N_{2,3}\C_1)$ and
     $(\N_{2}\N_{3})$, for $\mu\approx 1$ TeV, at a 100
     TeV \emph{pp} collider. 
-    The pair-production cross section for $\N_{2,3}\widetilde{\chi}^\pm_1$ is taken from
-    \cite{Gori:2014oua}, while the pair-production cross-section for $\N_2\N_3$ is calculated at Next-to-Leading Order (NLO) using Prospino2. The branching ratios to the diboson intermediate states are calculated using SUSY-HIT, and the branching ratios to the SM final states are taken from
-    \cite{Olive:2016xmw}.    }
+    The pair-production cross section for $\N_{2,3}\C_1$ is taken from
+    \cite{Gori:2014oua}, while the pair-production cross-section for $\N_2\N_3$
+    is calculated at Next-to-Leading Order (NLO) using Prospino2. The branching
+    ratios to the diboson intermediate states are calculated using SUSY-HIT,
+    and the branching ratios to the SM final states are taken from
+    \cite{Olive:2016xmw}.}
   \label{tab:xsections}
 \end{table}
 
@@ -308,7 +346,6 @@ NLSP.
 % CMS 1801.03957, combination of channels
 % 4b + MET, 2l + 2j + MET, >3l + MET, diphoton + MET
 % ATLAS, 4 leptons (hh/ZZ/hZ --> 4l)
-
  
 
 \section{Analysis Details}\label{sec:analysis}
@@ -386,12 +423,20 @@ M_T^R &= \sqrt{\frac{1}{2}\left[\slashed{E}_T(|\vec{p}_{ZT}|+|\vec{p}_{hT}|)
 \end{align}
  for $E_{Z,h}$ and $\vec{p}_{Z,h}$ being the reconstructed energy and momentum for $Z$ and $h$, respectively.
       Representative kinematic
-  distributions of these variables for signal events of $\mu=1$ TeV Higgsinos NLSP and a $M_1=25$ GeV Bino LSP, as well as $tt$ and $tbW$ backgrounds are
+  distributions of these variables for signal events of $\mu=1$ TeV Higgsinos
+  NLSP and a $M_1=25$ GeV Bino LSP, as well as $tt$ and $tbW$ backgrounds are
   shown in Fig.~\ref{fig:razor_histos}, after the trigger, identification,
-  $\slashed{E}_{T}$,  and  $m_{\ell^+\ell^-}$cuts.   \Shufang{BG generator level mll and MET cut (MET bigger tan 100 GeV), or cut level mll and MET cut (MET bigger than 400 GEV)? Both signal and backgrounds?} The
+  $\slashed{E}_{T}$,  and  $m_{\ell^+\ell^-}$cuts.   
+  \Shufang{BG generator level mll and MET cut (MET bigger tan 100 GeV), or cut
+    level mll and MET cut (MET bigger than 400 GEV)? Both signal and
+  backgrounds?} The
   distribution for the \emph{bbWW} background is not shown, since it is negligible in
   comparison to the others.   We can see that the distribution of $M_R$ is peaked
-  around 1 TeV for the signal, which is consistent with what we would expect as   it corresponds to the mass difference between the NLSP and LSP.  The $tt$ background peaks around 500 GeV, while the distribution of $tbW$ background almost overlaps with that of the signal process.  Similar behaviour also appears for $M_T^R$ distributions.  
+  around 1 TeV for the signal, which is consistent with what we would expect as
+  it corresponds to the mass difference between the NLSP and LSP.  The $tt$
+  background peaks around 500 GeV, while the distribution of $tbW$ background
+  almost overlaps with that of the signal process.  Similar behaviour also
+  appears for $M_T^R$ distributions.  
   For this mass combination, requiring $M_R >$ 800
   GeV and $M_T^R >$ 400 GeV yields the greatest significance.
 
@@ -546,16 +591,24 @@ roughly 87\%. This is far more than the 28\% reduction that one might naively
 expect as a result of applying the $b$-tagging efficiency of about 85\%
 specified in our \texttt{Delphes} card.  
  
- Comparing to the reach of multi-lepton channel in Ref.~\cite{Gori:2014oua}, with an  exclusion limit of Higgsino mass up to 2.8 TeV or a discovery reach of Higgsino mass up to 1.8 TeV for massless Bino, the reach of $Zh+\met$ channel in our study is less.  However, the reach for multi-lepton channel reduces for larger $M_1$, which vanishes for $M_1\gtrsim 600$ GeV (1000 GeV) for discovery (exclusion).   The reach for $Zh+\met$ search in our study exceed that of the multi-lepton search for larger LSP masses.  In particular, 
- the BDT reach for LSP mass with $Zh+\met$ search exceeds the reach for multi-lepton analyses by about 300 GeV.  
+Comparing to the reach of multi-lepton channel in Ref.~\cite{Gori:2014oua},
+with an  exclusion limit of Higgsino mass up to 2.8 TeV or a discovery reach
+of Higgsino mass up to 1.8 TeV for massless Bino, the reach of $Zh+\met$
+channel in our study is less.  However, the reach for multi-lepton channel
+reduces for larger $M_1$, which vanishes for $M_1\gtrsim 600$ GeV (1000 GeV)
+for discovery (exclusion).   The reach for $Zh+\met$ search in our study
+exceed that of the multi-lepton search for larger LSP masses.  In particular,
+the BDT reach for LSP mass with $Zh+\met$ search exceeds the reach for
+multi-lepton analyses by about 300 GeV.  
 
 
 
 \section{Conclusion}\label{sec:conclusion}
 
-In this paper, we examined the discovery potential for a 100 TeV $pp$ collider For 
-pair-produced heavy Higgsino NLSPs with Bino LSP, via 
-intermediate $Z$ and $h$ bosons that decay to a pair of leptons and $b$ quarks respectively:  $\chi_2^0\chi_3^0\rightarrow Zh \chi_1^0\chi_1^0\rightarrow bb\ell\ell \met$.
+In this paper, we examined the discovery potential for a 100 TeV $pp$ collider
+For pair-produced heavy Higgsino NLSPs with Bino LSP, via intermediate $Z$ and
+$h$ bosons that decay to a pair of leptons and $b$ quarks respectively:
+$\chi_2^0\chi_3^0\rightarrow Zh \chi_1^0\chi_1^0\rightarrow bb\ell\ell \met$.
 
 We pursued two analysis strategies. One was the traditional cut-and-count methods , including razor variables
 that are sensitive to the mass difference between the LSP and the NLSP. The
@@ -590,13 +643,14 @@ machine learning techniques might be profitably applied to this area as well -
 for a review of developments along this line, see \cite{Schwartzman:2016jqu}. 
 
 The collimation of the $b$ jets, along with the fact that we take into account
-detector effects using Delphes, result in a relatively lower reach in the high $\mu$, low
-$M_1$ region than the multilepton analysis in~\cite{Gori:2014oua}, which is
-able to exclude Higgsinos up to a mass of 2.85 TeV for massless Binos, or discover Higgsinos up to a mass of 1.8 TeV.   The reach
-of our analysis, however,  is higher in the region where the difference between
-$\mu$ and $M_1$ is smaller. This is consistent with our usage of the razor
-variable $M_R$, which is sensitive to the mass difference between the parent
-Higgsino and daughter Bino.
+detector effects using Delphes, result in a relatively lower reach in the high
+$\mu$, low $M_1$ region than the multilepton analysis in~\cite{Gori:2014oua},
+which is able to exclude Higgsinos up to a mass of 2.85 TeV for massless Binos,
+or discover Higgsinos up to a mass of 1.8 TeV.   The reach of our analysis,
+however,  is higher in the region where the difference between $\mu$ and $M_1$
+is smaller. This is consistent with our usage of the razor variable $M_R$,
+which is sensitive to the mass difference between the parent Higgsino and
+daughter Bino.
 
 A 100 TeV $pp$ collider represents an excellent opportunity to discover
 physics beyond the Standard Model. The extremely high energies and luminosities
