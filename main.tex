@@ -8,8 +8,10 @@
 \usepackage{tikz}
 \usepackage{slashed}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
 \usepackage{booktabs, longtable}
 \usepackage{microtype}
+\usepackage{soul}
 \bibliographystyle{JHEP.bst}
 
 \newcommand{\Shufang}[1]{{\bf\color{Maroon}  #1}}
@@ -24,9 +26,14 @@
 \includegraphics[width=#1\textwidth]{images/#2.pdf}}
 }
 \newcommand{\met}{{\slashed{E}_T}}
+\newcommand{\cb}{ c_\beta}
+\newcommand{\cw}{ c_{\theta_W}}
+\newcommand{\sinb}{ s_\beta}
+\newcommand{\sw}{ s_W}
+\newcommand{\mz}{ m_Z}
 
 
-\title{Higgs Assisted Razor Search for Higgsinos at 100 TeV}
+\title{Higgs Assisted Razor Search for Higgsinos at a 100 TeV $pp$ Collider}
 \author[a]{Adarsh Pyarelal}
 \author[b]{and Shufang Su}
 \affiliation[a]{School of Information, University of Arizona, Tucson, AZ 85721 , USA}
@@ -37,46 +44,46 @@
 \emailAdd{shufang@email.arizona.edu}
 
 
-\abstract{% 
+\abstract{%
   A 100 TeV proton-proton collider will be an extremely effective way to probe
-  the electroweak sector of the Minimal Supersymmetric Standard Model (MSSM).
-  In this paper, we describe a search strategy  for discovering pair-produced
-  Higgsino-like next-to-lightest supersymmetric particles (NLSP)  at a 100 TeV
-  hadron collider that decay to Bino-like lightest supersymmetric particle
-  (LSP) via intermediate $Z$ and SM Higgs bosons that in turn decay to a pair
-  of leptons and a pair of $b$-quarks respectively: $\N_{2}\N_{3} \rightarrow
+  the electroweak sector of the Minimal Supersymmetric Standard Model (MSSM).  In
+  this paper, we describe a search strategy for discovering pair-produced
+  Higgsino-like next-to-lightest supersymmetric particles (NLSPs) at a 100 TeV
+  hadron collider that decay to Bino-like lightest supersymmetric particle (LSP)
+  via intermediate $Z$ and SM Higgs boson that in turn decay to a pair of leptons
+  and a pair of $b$-quarks respectively: $\N_{2}\N_{3} \rightarrow
   (Z\N_1)(h\N_1)\rightarrow bb\ell\ell+\N_1\N_1$. In addition, we examine the
   potential for machine learning techniques to boost the power of our searches.
-  Using this analysis, Higgsinos up to 1.4 TeV can be discovered for Binos with
-  masses of about
-  0.9 TeV using 3000 fb$^{-1}$ of data. Additionally, Higgsinos up to 1.8
-  TeV can be excluded for Binos with masses of about 1.4 TeV at 95\% C.L.   This search
-  channel extends the multi-lepton search limits, especially in the region
-  where the mass difference between Higgsino NLSP and Bino LSP is small.
+  Using this analysis, Higgsinos up to 1.4 TeV can be discovered  at 5 $\sigma$
+  level for a Bino with mass of about 0.9 TeV using 3000 fb$^{-1}$ of data.
+  Additionally, Higgsinos up to 1.8 TeV can be excluded  at 95\% C.L. for Binos
+  with mass of about 1.4 TeV. This search channel extends the multi-lepton search
+  limits, especially in the region where the mass difference between the Higgsino
+  NLSPs and the Bino LSP is small.
 }
 
-\begin{document} 
+\begin{document}
+
 \maketitle
-%\flushbottom
 
 \section{Introduction}
- 
+
 The existence of dark matter provides unambiguous evidence of new physics
 beyond the Standard Model (SM) of particle physics. Indeed, given that there is
-far more dark matter in the universe than there is baryonic matter, determining
+far more dark matter in the Universe than there is baryonic matter, determining
 its precise nature is one of the most exciting challenges in particle physics
-today.  One promising group of candidate for dark matter is the class of stable
+today.  One promising group of candidates for dark matter is the class of stable
 particles known as weakly interacting massive particles (WIMPs). These
 particles arise naturally in many extensions of the SM that are motivated by
-the need to stabilize the electroweak scale. One of the most studied extensions
-to the SM is the Minimal Supersymmetric Standard Model (MSSM), which predicts a
+the need to stabilize the electroweak scale. One of the most heavily studied extensions
+is the Minimal Supersymmetric Standard Model (MSSM), which predicts a
 `supersymmetric partner', or \emph{superpartner}, for each SM
 particle\footnote{For a detailed review of the MSSM, see Ref.
 \cite{Martin:1997ns}.}. In the MSSM with \emph{R}-parity conservation, the
 lightest supersymmetric partner (LSP) is predicted to be absolutely stable,
 making it a good candidate for dark matter. The identity of the LSP is
 determined by the mass hierarchy of the superpartners, which in turn depends on
-how supersymmetry is broken.  However, taking into account experimental
+the mechanism of supersymmetry breaking.  However, taking into account experimental
 constraints and phenomenological considerations, the lightest of the MSSM
 particles known as the neutralinos emerges as the most attractive candidate
 for the LSP \cite{Bertone:2004pz}. 
@@ -100,36 +107,33 @@ scalar superparticles, however, are still relatively weak: around 650 $-$ 750
 GeV or less~\cite{ATL-PHYS-PUB-2019-022, Sirunyan:2017lae, Aaboud:2018htj,
 Sirunyan:2018ubx, Aaboud:2018zeb}, depending on the decay modes of the parent
 electroweakinos and their species.  In this paper, we will focus on the
-discovery potential of the neutralinos and charginos at the 100 TeV $pp$
+discovery potential of the neutralinos and charginos at a 100 TeV $pp$
 collider. 
 
 % Point to review papers for enumeration of studies
-The decay patterns of the electroweakinos (Winos, Binos, and Higgsinos) depend
+The decay patterns of the electroweakinos (Winos, Bino, and Higgsinos) depend
 on the hierarchy of the MSSM parameters $M_1, M_2$, and $\mu$~\footnote{For our
 study, we assume all the mass parameters are positive.  For the current
 analyses, the results do not depend much on the sign of those parameters.},
 which roughly determine the masses of the Bino, Winos, and Higgsinos,
-respectively~\cite{Han:2013kza}.  In this paper, we consider the Higgsino NLSP
+respectively~\cite{Han:2013kza}.  In this paper, we consider the Higgsino NLSPs
 and Bino LSP scenario with $M_1 < \mu \ll M_2$.  One of the motivations for
-studying Higgsinos is that the parameter $\mu$ that governs its mass plays an
+studying Higgsinos is that the parameter $\mu$ that governs their masses plays an
 important role in electroweak symmetry breaking~\cite{Acharya:2014pua}, and
 is driven to be relatively small by naturalness considerations. 
 Finding Higgsinos has traditionally been more challenging than finding Winos,
-due to their smaller production rate.
+due to their smaller production rates.
 This, however, can be remedied by the increased production cross sections and 
 luminosities at a 100 TeV $pp$ collider.
 
-
- 
-
-Since the Bino is the only supersymmetric particle lighter than the Higgsino in
-the mass hierarchy we consider, the neutral Higgsino will decay to a Bino and a
+Since the Bino is the only supersymmetric particle lighter than the Higgsinos in
+the mass hierarchy we consider, the neutral Higgsinos will decay to a Bino and a
 neutral SM boson (\emph{Z/h}) with a branching fraction of 100\%.  Searches for
-Higgsino NLPs with a Bino LSP  via  multi-lepton final states have been studied
-in Ref.~\cite{Gori:2014oua} at a 100 TeV $pp$ collider, for pair production of
+Higgsino NLSPs with Bino LSPs via  multi-lepton final states have been studied
+in Ref.~\cite{Gori:2014oua} for a 100 TeV $pp$ collider, for pair production of
 $\N_{2,3}\C_1$ and
 $\widetilde\chi_{1}^+\widetilde\chi_1^-$. In this paper, we attempt to exploit
-the relatively high branching fraction of the SM Higgs boson to \emph{b} quarks,
+the relatively large branching fraction of the SM Higgs boson to \emph{b} quarks,
 and study the potential of the $\N_2\N_3\rightarrow Zh
 \N_1\N_1\rightarrow bb\ell\ell \met$ channel.
 
@@ -170,11 +174,11 @@ SM Higgs boson in 2012 was done with the help of neural networks
 \cite{Chatrchyan:2012xdj}.
 
 The rest of the paper is structured as follows. In Sec.~\ref{sec:model}, we
-describe our model and search channel in more detail, and list the existing
+describe our model and search channel in more detail, and review the existing
 experimental search bounds. In Sec.~\ref{sec:analysis}, we describe our
-analysis strategies for both traditional cut-and-count analyses and analyses
+analysis strategies for both traditional cut-and-count analysis and analysis
 performed using BDTs. In Sec.~\ref{sec:results}, we present the results of our
-analyses, i.e. the expected 5 $\sigma$ discovery and 95\% C.L. exclusion
+analyses, i.e. the expected 5$\sigma$ discovery and 95\% C.L. exclusion
 reaches. Finally, we conclude with the implications in
 Sec.~\ref{sec:conclusion}.
 
@@ -186,13 +190,6 @@ The neutralino sector of MSSM consists of four mass eigenstates
 ($\N_1,\N_2,\N_3,\N_4$), which are mixtures of the Bino, Wino, and two neutral
 Higgsinos: ($\B,\W,\H_d,\H_u$). In the basis of these gauge
 eigenstates, the mass matrix of the neutralinos can be written as
-
-\newcommand{\cb}{ c_\beta}
-\newcommand{\cw}{ c_{\theta_W}}
-\newcommand{\sinb}{ s_\beta}
-\newcommand{\sw}{ s_W}
-\newcommand{\mz}{ m_Z}
-
 \begin{align}
   \mathbf{M}_{\widetilde{N}}=
   \begin{pmatrix}
@@ -201,13 +198,12 @@ eigenstates, the mass matrix of the neutralinos can be written as
     -\cb\sw\mz  & \cb\cw\mz    & 0          & -\mu \\
     \sinb\sw\mz & -\sinb\cw\mz & -\mu       & 0
   \end{pmatrix},
-\end{align}
-
-\noindent where we employ the notation $s_\theta, c_\theta = \sin\theta, \cos\theta$. Here,  $\theta_W$ is the Weinberg mixing angle, 
+\end{align} 
+where we employ the notation $s_\theta, c_\theta = \sin\theta, \cos\theta$. Here,  $\theta_W$ is the Weinberg mixing angle, 
 and $\tan\beta= v_u/v_d$, where $v_u$ and $v_d$ are the vacuum
 expectation values of $H_u^0$ and $H_d^0$, with $v_u^2+v_d^2=v^2=(246\ {\rm
 GeV})^2$. The parameters $M_1$, $M_2$, and $\mu$ are the mass parameters of
-the Bino, Wino, and the Higgsino, respectively.
+the Bino, Wino, and the Higgsinos, respectively.
 The mass eigenstates are labeled as $\N_i$ for $i=1 \ldots 4$ with increasing mass eigenvalues.
 In the limit where $\mz \ll |\mu\pm M_1|, |\mu\pm M_2|,$ the mass eigenstates
 are, to good approximation, a nearly pure Bino, $\B$, with mass $M_1$,
@@ -217,34 +213,28 @@ $|\mu|$.
 
 The optimal search strategy for finding electroweakinos   highly depends on
 their mass spectra \cite{Han:2013kza}.  Phenomenological collider studies on
-finding electroweakinos with a small mass splitting of about 0.1 - 50 GeV at a
-100 TeV collider can be found in \cite{Low:2014cba, Bramante:2014tba,
-Berlin:2015aba, Cirelli:2014dsa}. The projected exclusion reaches for pure Wino
-LSPs (with a mass splitting of 164.6 MeV \cite{Ibe:2012sx}) at a 100 TeV
-collider using the monojet channel is $\sim1.4$~TeV.  The reach
-can be increased to $\sim3$ TeV using a disappearing tracks search.
+finding electroweakinos with a small mass splitting of about 0.1 $-$ 50 GeV at a
+100 TeV $pp$  collider can be found in \cite{Low:2014cba, Bramante:2014tba,
+Berlin:2015aba, Cirelli:2014dsa}.
+For $3\ \text{ab}^{-1}$ of data, the projected exclusion reaches for pure Wino
+LSPs using the monojet channel is about $1.4$~TeV.  The reach
+can be increased to $\sim3$ TeV with a disappearing tracks search.
 Neutralinos up to 1 TeV can be excluded for mass splittings of about 20-30 GeV,
 using a soft lepton search \cite{Low:2014cba}. Additionally, Bino-Wino LSPs
-with masses up to 1.5 TeV and $\sim 1$~GeV inter-state mass splitting can be
-discovered at a 100 TeV collider with $\sim7 \text{ab}^{-1}$ of data. 
-  
-  \Shufang{Say a few words about typical
-  search strategy there.} \Adarsh{Yes, I focused more on well separated spectra
-  since that is more similar to our case - should I add more details for the
-  0.1 - 50 GeV compressed spectra studies?} \Shufang{Add a couple sentences
-  here of the search strategy for the small mass splitting case.}
-  \Adarsh{I added a couple of sentences.}
+with masses up to 1.5 TeV for an inter-state mass splitting of around 1 GeV  can be
+discovered at a 100 TeV $pp$ collider with $\sim7\ \text{ab}^{-1}$
+of data \cite{Bramante:2014tba}.
 
-  Well-separated spectra have been studied in \cite{Gori:2014oua,
-  Acharya:2014pua} using multi-lepton channels, of the form 
+Well-separated spectra have been studied in \cite{Gori:2014oua,
+Acharya:2014pua} using multi-lepton channels, of the form 
 
 \begin{align}
   pp\rightarrow \widetilde{\chi}_i\widetilde{\chi}_j\rightarrow VV +
   \N_1\N_1\rightarrow 2\ell/3\ell + \met,
-\end{align}
+\end{align} 
 
 \noindent where $\widetilde{\chi}_{i,j}$ can be a neutralino or chargino, $\N_1$
-is the lightest neutralino, and $V$ being any of the SM gauge bosons $W$, $Z$
+is the lightest neutralino, and $V$ is any of the SM gauge bosons $W$, $Z$
 or scalar $h$.  These searches work well since the large mass difference
 between the electroweakinos can lead to energetic leptons that can be easily
 identified. Among the multi-lepton searches for Higgsinos, the trilepton
@@ -253,7 +243,7 @@ searches: $\N_{2,3}\C_1\rightarrow WZ\N_1\N_1\rightarrow \ell\ell\ell +
 production cross-section of chargino-neutralino pairs combined with the large
 reduction in $t\overline{t}$ and QCD backgrounds from requiring three
 leptons.  Higgsino NLSPs can be excluded at 95\% C.L. with mass up to 2.8 TeV
-or be discovered with  mass up to 1.8 TeV, for a massless Wino LSP.   The reach
+or be discovered with  mass up to 1.8 TeV, for a massless Bino LSP.   The reach
 reduces for larger $M_1$, and vanishes for $M_1\gtrsim 600$ GeV (1000 GeV)
 for discovery (exclusion).  Multilepton searches with \emph{Zh} and \emph{ZZ}
 as the intermediate dibosons are unlikely to be as powerful, due to the smaller
@@ -263,6 +253,18 @@ multilepton searches, the channel with \emph{Zh} (originally suggested in
 Ref.~\cite{Han:2013kza}) as the intermediate dibosons emerges as a possible
 competitor to the \emph{WZ} channel.  
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.49\textwidth]{images/xsection_plot.pdf}
+  \includegraphics[width=0.49\textwidth]{images/br_plot.pdf}
+  \caption{Higgsino pair production $\N_2\N_3$
+    cross section (left panel), calculated using
+    Prospino2~\cite{Beenakker:1999xh},  and decay branching fractions
+    (right panel), calculated in SUSY-HIT~\cite{Djouadi:2006bz},  as a function
+    of $\mu$ for $M_1=25$ GeV.
+}
+  \label{fig:xsection_plot}
+\end{figure}
 
 In the left panel of Fig.~\ref{fig:xsection_plot}, we show the pair-production
 cross section $\N_2\N_3$ for the Higgsino-like NLSPs.  The cross section varies
@@ -276,9 +278,9 @@ multiplying all the branching fractions, the signal cross sections of
 
 \begin{align}
   pp\rightarrow \N_2\N_3\rightarrow (Z\N_1)(h\N_1)\rightarrow bb\ell\ell \N_1\N_1.
-\end{align}
+\end{align} 
 
-\noindent become comparable  to trilepton processes, as shown in Table
+\noindent become comparable to the trilepton processes, as shown in Table
 \ref{tab:xsections}. Thus, the $Zh+\met$ signal provides an alternative discovery
 channel for Higgsinos. The signal contains two \emph{b}-jets, two same flavor,
 opposite sign leptons, and missing transverse energy. The main backgrounds for
@@ -286,19 +288,7 @@ this process are: $t\overline{t}$, \emph{tbW} with the $b$ and $W$ not coming
 from a \emph{t}, and \emph{bbWW} with no intermediate $s$-channel top quarks.  
 
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.49\textwidth]{images/xsection_plot.pdf}
-  \includegraphics[width=0.49\textwidth]{images/br_plot.pdf}
-  \caption{Higgsino pair production $\N_2\N_3$
-    cross section (left panel), calculated using
-    Prospino2~\cite{Beenakker:1999xh},  and decay branching fractions
-    (right panel), calculated in SUSY-HIT~\cite{Djouadi:2006bz},  as a function
-    of $\mu$ for $M_1=25$ GeV. However, it should be noted that the dependence
-    on $M_1$ is very weak.
-}
-  \label{fig:xsection_plot}
-\end{figure}
+
 
 \begin{table}
   \centering
@@ -327,16 +317,13 @@ from a \emph{t}, and \emph{bbWW} with no intermediate $s$-channel top quarks.
 
 
 Searches for pair produced nearly mass-degenerate Higgsinos  have been
-performed at ATLAS and CMS for various decay  topologies
+performed at ATLAS and CMS for various decay topologies
 \cite{Aaboud:2018htj,Sirunyan:2018ubx,Aaboud:2018zeb}.  
-For neutralino-chargino pair production with \emph{WZ} and \emph{WH} topologies, the 95\%
-C.L. exclusion limits are about 650 GeV, 490 GeV, and 535 GeV for \emph{WZ}, \emph{WH}
-and an equal mixture of \emph{WZ}+\emph{WH} topology, with the strongest limits coming from
-the multi-lepton searches.  For neutralino pair production with \emph{ZZ, ZH}, and \emph{HH} topologies~\footnote{While such searches assume gravitino LSP with
-Higgsino NLSP, the limits are still relevant for our Higgsino NLSP with Bino
+For neutralino-chargino pair production with \emph{WZ} and \emph{Wh} topologies, the 95\%
+C.L. exclusion limits are about 650 GeV, 490 GeV, and 535 GeV for \emph{WZ}, \emph{Wh} and an equal mixture of \emph{WZ}+\emph{Wh} topology, with the strongest limits coming from
+the multi-lepton searches.  For neutralino pair production with \emph{ZZ, Zh}, and \emph{hh} topologies\footnote{While such searches assume a gravitino LSP with Higgsino NLSPs, the limits are still relevant for our Higgsino NLSPs - Bino
 LSP scenario.}, the limits are about 650 $-$ 750 GeV via multi-lepton or
-multi-$b$ jets searches, depending on the decay branching fractions of Higgsino
-NLSP. 
+multi-$b$ jets searches, depending on the decay branching fractions of the Higgsino NLSPs. 
 
 
 %ATLAS 1806.04030, (hh/hZ/ZZ/) --> 4b
@@ -376,7 +363,7 @@ well.
 At the detector simulation level, we relaxed the lepton isolation criterion in the
 \texttt{Delphes} detector card from $\Delta R_{min}$ from 0.4 to 0.05. This is
 motivated by the fact that due to the large mass difference between the Higgsino
-NLSP and the Bino LSP in our search channel, the intermediate $Z$ bosons will be
+NLSPs and the Bino LSP in our search channel, the intermediate $Z$ bosons will be
 highly boosted, and the leptons to which they decay will be highly collimated.
 The value of 0.05 is consistent with what is suggested in previous 100 TeV
 studies~\cite{Acharya:2014pua,Gori:2014oua,Bramante:2014tba} and will allow
@@ -420,24 +407,15 @@ M_T^R &= \sqrt{\frac{1}{2}\left[\slashed{E}_T(|\vec{p}_{ZT}|+|\vec{p}_{hT}|)
 \end{align}
  for $E_{Z,h}$ and $\vec{p}_{Z,h}$ being the reconstructed energy and momentum for $Z$ and $h$, respectively.
       Representative kinematic
-  distributions of these variables for signal events of $\mu=1$ TeV Higgsinos
-  NLSP and a $M_1=25$ GeV Bino LSP, as well as $tt$ and $tbW$ backgrounds are
-  shown in Fig.~\ref{fig:razor_histos}, after the trigger, identification,
-  $\slashed{E}_{T}$,  and  $m_{\ell^+\ell^-}$cuts.   
-  \Shufang{BG generator level mll and MET cut (MET bigger tan 100 GeV), or cut
-    level mll and MET cut (MET bigger than 400 GEV)? Both signal and
-  backgrounds?} \Adarsh{The plots in figure 2 show distributions at the reconstructed level,
-  so they have the generator level cuts and the reconstructed level cuts. 
-  For the signal, no generator-level cuts are applied.
-  For the background, the $80 < m_{ll} < 100 $ GeV and  $\met > 100$ GeV
-  generator level cuts are applied.}
+  distributions of these variables for a signal benchmark point with $\mu=1$ TeV and $M_1=25$ GeV, as well as $tt$ and $tbW$ backgrounds are
+  shown in Fig.~\ref{fig:razor_histos}, after the trigger and identification cuts.
   The distribution for the \emph{bbWW} background is not shown, since it is negligible in
   comparison to the others.   We can see that the distribution of $M_R$ is peaked
   around 1 TeV for the signal, which is consistent with what we would expect as
-  it corresponds to the mass difference between the NLSP and LSP.  The $tt$
+  it corresponds to the mass difference between the NLSPs and the LSP.  The $tt$
   background peaks around 500 GeV, while the distribution of $tbW$ background
-  almost overlaps with that of the signal process.  Similar behaviour also
-  appears for $M_T^R$ distributions.  
+  almost overlaps with that of the signal process.
+  Similar behaviour is also seen in the $M_T^R$ distributions.  
   For this mass combination, requiring $M_R >$ 800
   GeV and $M_T^R >$ 400 GeV yields the greatest significance.
 
@@ -448,15 +426,16 @@ M_T^R &= \sqrt{\frac{1}{2}\left[\slashed{E}_T(|\vec{p}_{ZT}|+|\vec{p}_{hT}|)
 \includegraphics[trim = {0.3cm 0.6cm 0.1cm 0}, clip, width=0.496\textwidth]{images/mR_copy.png}
 \includegraphics[trim = {0.3cm 0.6cm 0.1cm 0}, clip, width=0.496\textwidth]{images/mTR_copy.png}
 \caption{Normalized distributions of the razor kinematic variables $M_R$
-  (left) and $M_T^R$ (right) for signal process with $\mu=1$ TeV Higgsinos NLSP and a $M_1=25$ GeV Bino LSP,  as well as the dominant $tt$ and $tbW$ backgrounds,
-  after the trigger, identification,  $\slashed{E}_{T}$ and $m_{\ell^+\ell^-}$ cuts.}
+  (left) and $M_T^R$ (right) for  a signal benchmark point with $\mu=1$ TeV and $M_1=25$ GeV,
+  as well as the dominant $tt$ and $tbW$ backgrounds
+  after the trigger and identification cuts.}
 \label{fig:razor_histos}
 \end{figure}
 
 \begin{table}[h]
   \centering
   \input{tables/cutflowtable.tex}
-  \caption{Representative cut flow table for the benchmark point $\mu=1$ TeV,
+  \caption{Representative cut flow table for a signal benchmark point with $\mu=1$ TeV,
     $M_1 = 25$ GeV at 100  TeV $pp$ collider, for a traditional cut-and-count analysis. All cross sections
     are given in unit of fb, and the units for the missing energy, invariant
     mass, and razor variable cuts are GeV. The significance, $S/\sqrt{B}$, is
@@ -465,7 +444,7 @@ M_T^R &= \sqrt{\frac{1}{2}\left[\slashed{E}_T(|\vec{p}_{ZT}|+|\vec{p}_{hT}|)
 \end{table}
 
 Table \ref{tab:cc_cutflowtable} shows the cut efficiencies for a representative
-signal benchmark point with a $\mu =$ 1 TeV and $M_1$ = 25 GeV.   The
+signal benchmark point with $\mu =$ 1 TeV and $M_1$ = 25 GeV.   The
 cross-sections of the backgrounds are obtained from MadEvent after performing the MLM matching procedure. Their small size reflects
 the $m_{\ell\ell}$ and $\slashed{E}_T$ cuts we imposed at the parton level. For all
 the benchmark points, we require a minimum of 3 signal events left over after
@@ -478,15 +457,13 @@ of 3000 fb$^{-1}$), shown in the last column.
 
 For each signal mass combination and each background process, we preselected
 events that passed the lepton trigger, contained two SFOS leptons and two
-$b$-tagged jets, and calculated a number of kinematic variables for each event.
-  \Shufang{So singal event does not have mll and MET parton level cuts 
-  while BG events have those two cuts. right?} \Adarsh{Right.}   We then
+$b$-tagged jets, and calculated a number of kinematic variables for each event.   We then
 placed these kinematic variables in an array, with each row corresponding to an
 event, and the columns corresponding to the kinematic variables. A mixture of
-low-level and high level kinematic variables was shown to have the greatest
+low-level and high-level kinematic variables was shown to have the greatest
 effectiveness. The kinematic variables chosen were $m_{\ell\ell}$, $m_{bb}$,
 $M_R$, $M_T^R$, $\slashed{E}_T,$ the total hadronic transverse energy $H_T$,
-and transverse momenta of individual final state leptons and $b$-quarks:
+and the transverse momenta of individual final state leptons and $b$-quarks:
 $p_T^{\ell_1}$, $p_T^{\ell_2}$, $p_T^{b_1}$, and $p_T^{b_2}$. We then divided
 the generated events into training and test sets, with the training set
 comprising 75\% of signal events and 30\% of background events.  We used the
@@ -501,16 +478,14 @@ been assigned to the events in the test sets, we can use this score just as we
 would a regular kinematic variable, that is, we apply a cut that selects
 events with a minimum of this score. The value of the cut is chosen to maximize
 the significance for each signal benchmark point. The distribution of scores
-for the specific benchmark point ($\mu$ = 1 TeV, $M_1$ = 25 GeV) is shown in
-figure \ref{fig:bdt_response}. We observe that there is an appreciable
+for the representative benchmark point ($\mu$ = 1 TeV, $M_1$ = 25 GeV) is shown in Fig.~\ref{fig:bdt_response}. We observe that there is an appreciable
 separation between the signal and background distributions.
 
 \begin{figure}[h]
 \centering
 \includegraphics[trim = {0 0.5cm 0 0},clip]{images/bdt_response_png}
 \caption{Distribution of the decision function of the gradient boosted decision
-tree classifier algorithm for signal ($\mu = 1$ TeV, $M_1 = 25$ GeV) and
-backgrounds. }
+tree classifier for   the representative signal benchmark point ($\mu = 1$ TeV, $M_1 = 25$ GeV) and backgrounds.}
 \label{fig:bdt_response}
 \end{figure}
 
@@ -518,16 +493,15 @@ backgrounds. }
   \centering
   \input{tables/paper_bdt_cutflowtable.tex}
   \caption{Representative cut flow table for the same benchmark point and
-    integrated luminosity as in table \ref{tab:cc_cutflowtable}, but using a
-    boosted decision tree (BDT) analysis instead. The preselection is equivalent
-    to the trigger and identification cuts listed in table
+    integrated luminosity as in Table \ref{tab:cc_cutflowtable}, but using a BDT  analysis instead. The preselection is equivalent
+    to the trigger and identification cuts listed in Table
     \ref{tab:cc_cutflowtable}. As before, all the cross sections are in
   fb.  }
 \label{tab:bdt_cutflowtable}
 \end{table}
 
 Table \ref{tab:bdt_cutflowtable} shows the cut efficiencies for the same
-representative benchmark point as in table \ref{tab:cc_cutflowtable}, but this
+representative benchmark point as in Table \ref{tab:cc_cutflowtable}, but this
 time for a boosted decision tree analysis. We observe that the statistical
 significance we can achieve goes up from 2.4 to 8.4, a roughly four-fold
 increase.  
@@ -536,7 +510,7 @@ For certain values of the
 cuts on kinematic variables or the score of the classifier, no events survived
 for one or more of the background components. To guard against overly optimistic
 estimates of the significance $S/\sqrt{B}$, we set a lower bound of 3 for the
-number of MC events after cuts for each background component, corresponding to
+number of Monte Carlo (MC) events after cuts for each background component, corresponding to
 the 95\% confidence interval for a Poisson distribution. 
 
 
@@ -561,15 +535,15 @@ Fig.~\ref{fig:contours} shows the expected reach  for 95\% C.L. exclusion and
 collider with an integrated luminosity of 3000 fb$^{-1}$. The cut-and-count
 strategy is able to discover Higgsinos up to 850 GeV  and exclude them up to
 1.35 TeV.  The boosted decision
-tree analysis, improves this reach -- it is able to discover Higgsinos up to
+tree analysis improves this reach -- it is able to discover Higgsinos up to
 1.4 TeV, and exclude them up to 1.8 TeV in favorable points in parameter space.
 Similarly, Binos can be discovered up to 350 GeV and excluded up to 700 GeV
 with the rectangular cut analysis, and the BDT analysis can discover them up to
 about 900 GeV and exclude them up to 1.4 TeV. Since the background left after
-cut is relatively low, we do not include systematic errors in these estimates.  
+cuts is relatively low, we do not include systematic errors in these estimates.  
 
 
-Comparing the BDT results with that of the cut-and-count bases analyses, the improvement is substantial, but perhaps not spectacular. However, it should
+Comparing the BDT results with that of the cut-and-count bases analysis, the improvement is substantial, but perhaps not spectacular. However, it should
 be kept in mind that this is probably a conservative estimate. Since we reserve
 30\% of the background data for training purposes, and impose the condition that the
 minimum number of MC events after cuts for the backgrounds must be 3, the true rate of background
@@ -581,36 +555,32 @@ fraction of the signal events are preserved with the BDT approach compared to
 the rectangular cut approach, as can be seen in Tables \ref{tab:cc_cutflowtable}
 and \ref{tab:bdt_cutflowtable}.  
 
-In regions with large mass differences between the LSP and NLSP, the reach is
+In regions with large mass differences between the LSP and NLSP, the reach in $\mu$ is
 reduced.  This is because the intermediate SM Higgs boson will be highly boosted, and
 thus decay into a highly collimated pair of $b$-jets. The extent to which this
-affects our results can be estimated from table \ref{tab:cc_cutflowtable}. We
+affects our results can be estimated from Table \ref{tab:cc_cutflowtable}. We
 see that requiring two $b$-tagged jets reduces our signal cross-section by
 roughly 87\%. This is far more than the 28\% reduction that one might naively
 expect as a result of applying the $b$-tagging efficiency of about 85\%
 specified in our \texttt{Delphes} card.  
  
-Comparing to the reach of multi-lepton channel in Ref.~\cite{Gori:2014oua},
-with an  exclusion limit of Higgsino mass up to 2.8 TeV or a discovery reach
-of Higgsino mass up to 1.8 TeV for massless Bino, the reach of $Zh+\met$
-channel in our study is less.  However, the reach for multi-lepton channel
-reduces for larger $M_1$, which vanishes for $M_1\gtrsim 600$ GeV (1000 GeV)
-for discovery (exclusion).   The reach for $Zh+\met$ search in our study
-exceed that of the multi-lepton search for larger LSP masses.  In particular,
-the BDT reach for LSP mass with $Zh+\met$ search exceeds the reach for
-multi-lepton analyses by about 300 GeV.  
-
+For massless Binos, the reach of the $Zh+\met$ channel in our study is less than the reach of the multi-lepton channel studied in Ref.~\cite{Gori:2014oua},
+which can exclude Higgsinos with masses up to 2.8 TeV and discover them for masses 
+up to 1.8 TeV.
+However, for heavier Binos (larger $M_1$), the reach of the multi-lepton channel
+is reduced, and vanishes completely for $M_1\gtrsim 600$ GeV (1000 GeV)
+for discovery (exclusion). In this region, the reach of the $Zh+\met$ channel in our study exceeds that of the multi-lepton search for larger LSP masses: an increasement of about 300 GeV with BDT analysis.  
 
 
 \section{Conclusion}\label{sec:conclusion}
 
-In this paper, we examined the discovery potential for a 100 TeV $pp$ collider
-For pair-produced heavy Higgsino NLSPs with Bino LSP, via intermediate $Z$ and
-$h$ bosons that decay to a pair of leptons and $b$ quarks respectively:
-$\chi_2^0\chi_3^0\rightarrow Zh \chi_1^0\chi_1^0\rightarrow bb\ell\ell \met$.
+In this paper, we examined the discovery/exclusion potential of a 100 TeV \emph{pp} collider
+for pair-produced heavy Higgsino NLSPs with a Bino LSP, via intermediate \emph{Z} and
+\emph{h} bosons that decay to a pair of leptons and \emph{b} quarks respectively:
+$\N_2\N_3\rightarrow Zh \N_1\N_1\rightarrow bb\ell\ell \met$.
 
-We pursued two analysis strategies. One was the traditional cut-and-count methods , including razor variables
-that are sensitive to the mass difference between the LSP and the NLSP. The
+We pursued two analysis strategies. One was the traditional cut-and-count methods, including razor variables
+that are sensitive to the mass difference between the LSP and the NLSPs. The
 other strategy was to use a boosted decision tree classifier trained with a
 number of low- and high-level kinematic variables, including razor variables. We expected
 that the machine learning approach would be able to more efficiently determine
@@ -619,19 +589,19 @@ space than the traditional   cut-and-count method.
 
 Overall, we find that the reach of our analysis strategy is a significant
 improvement over that of the LHC. We found that the rectangular cut strategy has
-the potential to discover Higgsino LSPs up to a mass of 850 GeV, and exclude
-them up to a mass of 1.35 TeV, for Bino masses around 350 GeV and 700 GeV
+the potential to discover Higgsino NLSPs up to a mass of 850 GeV, and exclude
+them up to a mass of 1.35 TeV, for a Bino LSP mass around 350 GeV and 700 GeV
 respectively. 
 As expected, the boosted decision tree classifier
 performs better, with the ability to discover Higgsino NLSPs up to 1.4 TeV and
-exclude them up to a mass of 1.8 TeV, for Bino masses of about 900 GeV and 1.4
+exclude them up to a mass of 1.8 TeV, for a Bino mass of about 900 GeV and 1.4
 TeV respectively.   In the
-process, we highlighted the importance of generating enough Monte Carlo events
+process, we highlighted the importance of generating enough MC  events
 to estimate the huge backgrounds at a 100 TeV $pp$ collider.   
 
 Additionally, we found that the reach for both strategies is considerably
 reduced when the difference $ \mu-M_1$ is high, since it results in a highly
-boosted $h$ that decays to a collimated pair of $b$ jets that will most likely be
+boosted $h$ that decays to a collimated pair of $b$-jets that will most likely be
 identified as a single jet. This is not an insurmountable difficulty - there are
 ways to deal with collimated jets, although they are beyond the scope of this
 work. This issue does, however, highlight the necessity of improving isolation
@@ -641,29 +611,30 @@ to determine jet substructure, see \cite{Shelton:2013an}. In the future,
 machine learning techniques might be profitably applied to this area as well -
 for a review of developments along this line, see \cite{Schwartzman:2016jqu}. 
 
-The collimation of the $b$ jets, along with the fact that we take into account
+The collimation of the $b$ jets, along with the fact that we simulate
 detector effects using Delphes, result in a relatively lower reach in the high
 $\mu$, low $M_1$ region than the multilepton analysis in~\cite{Gori:2014oua},
-which is able to exclude Higgsinos up to a mass of 2.85 TeV for massless Binos,
-or discover Higgsinos up to a mass of 1.8 TeV.   The reach of our analysis,
-however,  is higher in the region where the difference between $\mu$ and $M_1$
+which is able to exclude Higgsinos up to a mass of 2.8 TeV for massless Binos,
+or discover them up to a mass of 1.8 TeV. However, the reach of our analysis
+is higher in the region where the difference between $\mu$ and $M_1$
 is smaller. This is consistent with our usage of the razor variable $M_R$,
-which is sensitive to the mass difference between the parent Higgsino and
+which is sensitive to the mass difference between the parent Higgsinos and the
 daughter Bino.
 
-A 100 TeV $pp$ collider represents an excellent opportunity to discover
+A 100 TeV \emph{pp} collider represents an excellent opportunity to discover
 physics beyond the Standard Model. The extremely high energies and luminosities
 involved will present new challenges for particle physicists, and it is likely
 that machine learning will play an important part in facing them. 
   
 \acknowledgments
 
-We would like to thank Matt Leone and Ken Johns for helpful discussions.  The
+We would like to thank Matt Leone and Ken Johns for helpful discussions. The
 research activities of AP and SS were supported in part by the Department of
 Energy under Grant DE-FG02-13ER41976/de-sc0009913. An allocation of computer
 time from the UA Research Computing High Performance Computing (HPC) and High
 Throughput Computing (HTC) at the University of Arizona is gratefully
-acknowledged.  We also thank KITP for its hospitality when this draft is completed.  This research was supported in part by the National Science Foundation under Grant No. NSF PHY-1748958.
+acknowledged. We also thank KITP for its hospitality when this draft is completed.
+This research was supported in part by the National Science Foundation under Grant No. NSF PHY-1748958.
 
 \bibliography{references}
 
