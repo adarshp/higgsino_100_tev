@@ -5,6 +5,8 @@
 \newcommand{\Shufang}[1]{{\bf\color{Maroon}  #1}}
 \newcommand{\Adarsh}[1]{{\bf\color{RoyalBlue} AP: #1}}
 \newcommand{\ap}[1]{\textcolor{RoyalBlue}{#1}}
+\newcommand{\issue}[1]{\bigskip\noindent\textbf{\color{Maroon}Issue #1: }}
+\newcommand{\reply}{\medskip\noindent\textbf{\color{RoyalBlue}Reply:}}
 
 \author{Adarsh Pyarelal and Shufang Su}
 
@@ -15,7 +17,7 @@
 We would like to thank the referee for their careful reading of the paper and their 
 suggestions. The issues and our replies are below.
 
-\noindent \textbf{Issue 1}: On page 1 the authors state ``the lightest of the
+ \issue{1}: On page 1 the authors state ``the lightest of the
 MSSM particles known as the neutralinos emerges as the most attractive
 candidate for the LSP.". It is not true that the lightest MSSM particles ought
 to be neutralinos (there is nothing wrong with sneutrinos being the LSP), and
@@ -23,35 +25,33 @@ also I guess that one is not hunting for an attractive candidate for LSP, but
 rather trying to probe the particle nature of dark matter. I would suggest to
 correct this sentence accordingly.
 
-\noindent\textbf{Reply:} What we meant was that the lightest neutralino
+\reply{} What we meant was that the lightest neutralino
 emerges as the most attractive candidate for the LSP. We realize that the
 wording might be confusing, so we have changed it to...\Adarsh{TODO}.
 
-\bigskip
-
-\noindent\textbf{Issue 2:} The authors state on page 2 that limits on
+ \issue{2} The authors state on page 2 that limits on
 electroweakinos are around 650-750 GeV, but this is only true for a certain
 mass gap among the neutralinos (e.g: 10-20 GeV such that the multi-lepton
 searches are effective). From instance, the latest limits from ATLAS for pure
 Higgsinos are around 150 GeV. Please correct the sentence.
 
-\noindent\textbf{Reply:} 
+\reply{} We have corrected the sentence to state that the
+limits on electroweakinos are between 0.15 and 1.0 TeV, depending on the mixing
+of the gauge eigenstates.
 
-\bigskip
-
-\noindent\textbf{Issue 3:} On page 2 the authors write The most interesting
+\issue{3} On page 2 the authors write The most interesting
 regions of split SUSY....  This is a biased statement. Interesting because of
 exactly what reason? The most interesting for who, and why? Please explain
 and/or clarify.
 
-\noindent\textbf{Reply:} 
+\reply{} We acknowledge that this statement is too
+strong, and have accordingly softened it, clarifying that our main interest is
+in discovering thermal electroweakino dark matter.
 
-\bigskip
-
-\noindent\textbf{Issue 4:} On page 3 the authors make a brief overview of
-existing bounds on electroweakinos at 100 TeV colliders, and a few important
-references are missing. On one hand, the studies going for ”small mass split-
-tings” [23,25,31,32] strongly drew inspiration from the mono-jet + soft- lepton
+\issue{4} On page 3 the authors make a brief overview of existing bounds on
+electroweakinos at 100 TeV colliders, and a few important references are
+missing. On one hand, the studies going for ”small mass splittings”
+[23,25,31,32] strongly drew inspiration from the mono-jet + soft- lepton
 strategies (dubbed ”soft-lepton search” by the authors) that were proposed and
 studied for the LHC in e.g: 1004.4902, 1307.5952, 1310.4274, 1312.7350,
 1401.1162, 1401.1235, etc. Furthermore, bounds are quoted on Winos including
@@ -60,11 +60,9 @@ disappearing track searches but not on Higgsinos (1703.05327, 1703.09675,
 below 100 GeV can still occur (1801.05432). This is a strange choice given that
 the authors work in a Bino-Higgsino system.
 
-\noindent\textbf{Reply:} 
+\reply{} 
 
-\bigskip
-
-\noindent\textbf{Issue 5:} On page 5 the authors use LO kinematics normalized
+\issue{5} On page 5 the authors use LO kinematics normalized
 to NLO via PROSPINO, but the background is only done at LO + matching. Some
 processes can have large K-factors, e.g: ttbar is about 2 in the BDT, in- deed,
 ttbar and tbW appear, so the significance can be overestimated. It would be
@@ -74,11 +72,9 @@ kinematic distributions and assess how the cut-and-count and BDT analysis are
 affected. For the latter it would be enough to use the NLO events as a test
 sample using the current LO training.
 
-\noindent\textbf{Reply:} 
+\reply{} 
 
-\bigskip
-
-\noindent\textbf{Issue 6:} On page 7 the authors discuss the background
+\issue{6} On page 7 the authors discuss the background
 processes. While it is clear that they have considered the relevant
 ”irreducible” backgrounds, they do not include any process of V+jets, with V
 being a vector boson. In particular, a leptonically decaying Z plus a few jets
@@ -86,11 +82,9 @@ can mimic the final state due to missing energy generated from miss-measured
 jet momenta. While the efficiency is low, the cross sections of V+jets are
 fairly large, so this needs to be properly estimated.
 
-\noindent\textbf{Reply:} 
+\reply{} 
 
-\bigskip
-
-\noindent\textbf{Issue 7:} On page 8 the authors start a multi-variate analysis
+\issue{7} On page 8 the authors start a multi-variate analysis
 based on boosted- decision trees (BDTs). It is not clear that the BDT would be
 able to ”discover” the razor variables, e.g: Ez and Eh from Eq. 3.1 are not
 explicitly included: with pT of both b’s and mbb one would still have a
@@ -100,28 +94,24 @@ b-quarks) or what motivated the choices of input variables. If the BDT includes
 the razor variables, then it naively should outperform it (or have a similar
 performance, in the best case).
 
-\noindent\textbf{Reply:} 
+\reply{} 
 
-\bigskip
+\issue{8} In the same page I find that there are very few details
+about the BDT implementation. The maximal depth and minimum node size are not
+written. There is no evidence of the reliability of the study, e.g: no ROC
+curve is shown neither the AUC is reported. It would be desriable to present
+the ROC curve, the AUC for some benchmark points, as well as illustrate the
+robustness of the study by presenting e.g: the precision vs recall (or PPR vs
+TPR, depending on the ML jargon used).
 
-\noindent\textbf{Issue 9:} In the same page I find that there are very few details about the BDT
-implementation. The maximal depth and minimum node size are not written. There
-is no evidence of the reliability of the study, e.g: no ROC curve is shown
-neither the AUC is reported. It would be desriable to present the ROC curve,
-the AUC for some benchmark points, as well as illustrate the robustness of the
-study by presenting e.g: the precision vs recall (or PPR vs TPR, depending on
-the ML jargon used).
+\reply{} 
 
-\noindent\textbf{Reply:} 
-
-\bigskip
-
-\noindent\textbf{Issue 10:} The sentence about the training set is confusing, so
-please clearly state if a) 75 % of the signal events and 30% of the background
-events go into training (so test is 25 % of signal and 70 % of background). If
+\issue{9} The sentence about the training set is confusing, so
+please clearly state if a) 75\% of the signal events and 30\% of the background
+events go into training (so test is 25\% of signal and 70\% of background). If
 this is what was done, what is the reason to save background events for test
-purposes? Just limited MC statistics?  b) 75% of the training events are signal
-and 30% are background (since this does not add up to 100%, maybe a typo?) c)
+purposes? Just limited MC statistics?  b) 75\% of the training events are signal
+and 30\% are background (since this does not add up to 100\%, maybe a typo?) c)
 please also specify the size /weights of signal and background events.
 According to Table 5 in the preselection the bgd XS is about 9000 times larger
 than the signal so if events are weighted according to XS then the BDT will
@@ -129,11 +119,9 @@ learn to recognize background more than focusing on signal features. One option
 would be to re-train assigning the signal and background samples the same
 weight.
 
-\noindent\textbf{Reply:} 
+\reply{} 
 
-\bigskip
-
-\noindent\textbf{Issue 11:} In page 9 the authors claim their sensitivity stems
+\issue{10} In page 9 the authors claim their sensitivity stems
 from S/Sqrt[B], but they request 3 Monte Carlo (MC) events. This sentence is
 confusing, because the number of MC events in itself is meaningless. Is it the
 weight of the corresponding events what the authors mean? Please clarify it.
@@ -142,19 +130,17 @@ control over the statistics... can the authors comment on the sample size of
 both signal and background? What is the ratio of the cross section of generated
 events over the one expected at FCC-hh with 3ab-1?
 
-\noindent\textbf{Reply:} 
+\reply{} 
 
-\bigskip
-
-\noindent\textbf{Issue 12:} In page 9 the authors display their results. If, as
-stated in the introduc- tion, dark matter is a motivation, then it iso-relic
+\issue{11} In page 9 the authors display their results. If, as
+stated in the introduction, dark matter is a motivation, then it iso-relic
 contour lines on Fig.4 could be shown (of course, there could be a mild
 dependence on other parameters like tan beta, in that case one can fix some
 values). By the same token, is the model affected by current and/or future
 direct and indirect detection constraints? This information is also available
 in the literature, but the relevant results need to be explicitly pointed out.
 
-\noindent\textbf{Reply:} 
+\reply{} 
 
 
 \end{document}
