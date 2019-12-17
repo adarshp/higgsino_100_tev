@@ -110,8 +110,7 @@ searches~\cite{CMS-PAS-SUS-19-005}. The limits on electroweakinos with
     Sirunyan:2018ubx, Aaboud:2018htj, Aaboud:2018zeb, Aad:2019qnd, Aad:2019vvf,
   Aad:2019vnb, Aaboud:2018ngk, Aaboud:2018sua, Aaboud:2018jiw, Aaboud:2017leg,
 Aaboud:2017mpt, Aaboud:2017nhr}.  In this paper, we will focus on the discovery
-potential of the neutralinos and charginos at a 100 TeV $pp$ collider. {\bf
-Can not find Ref. 9}
+potential of the neutralinos and charginos at a 100 TeV $pp$ collider. 
 
 
 
@@ -144,8 +143,7 @@ and study the potential of the $\N_2\N_3\rightarrow Zh
 
 % Why a 100 TeV collider?
 A 100 TeV $pp$ collider would open up an immense number of physics
-opportunities not afforded to the 14 TeV LHC. \st{including exploring the most
-interesting regions of the split SUSY parameter space}~\cite{Arkani-Hamed:2015vfh}.
+opportunities not afforded to the 14 TeV LHC~\cite{Arkani-Hamed:2015vfh}.
 % Status of 100 TeV planning
 Such a collider would be a natural next step after the LHC, and is being
 actively discussed in the particle physics community, with two major proposals
@@ -362,11 +360,11 @@ We simulated parton-level events using \texttt{MadGraph5 v2.3.2.2} and
 detector simulation, with the detector card devised by the FCC-hh working
 group\footnote{\url{https://github.com/HEP-FCC/FCCSW/blob/master/Sim/SimDelphesInterface/data/FCChh_DelphesCard_Baseline_v01.tcl}}.
 For the backgrounds, we allowed up to one additional jet in the final state, to
-approximate NLO QCD effects, and performed MLM matching\footnote{\ap{Although
+approximate NLO QCD effects, and performed MLM matching\footnote{Although
 there are tools that support NLO generation \cite{Alwall:2014hca}, their NLO
 generation mode does not support specifying decay chains, which we require in
 order to generate enough MC events to be statistically representative of the
-backgrounds at a 100 TeV $pp$ collider.}} with the \texttt{xqcut}
+backgrounds at a 100 TeV $pp$ collider.} with the \texttt{xqcut}
 parameter set to 40 GeV. The Higgsino pair production cross sections were
 calculated using \texttt{Prospino2}~\cite{Beenakker:1999xh} at NLO.  
 To decouple the Wino, we set its mass parameter $M_2$ to 3 TeV.  
@@ -468,7 +466,7 @@ cross-sections of the backgrounds are obtained from MadEvent after performing
 the MLM matching procedure. Their small size reflects the $m_{\ell\ell}$ and
 $\slashed{E}_T$ cuts we imposed at the parton level. For all the benchmark
 points, we require a minimum of three background events (at the MC level, i.e.
-unweighted) left over after cuts\footnote{\ap{This is inspired by the upper
+unweighted) left over after cuts\footnote{This is inspired by the upper
     one-sided limit for the mean of a Poisson variable given zero observed
     events, for a confidence level of 95\% (see Table 39.3 of
     \cite{PhysRevD.98.030001}), however, it does not reflect it exactly (since
@@ -481,7 +479,7 @@ unweighted) left over after cuts\footnote{\ap{This is inspired by the upper
     to believe that the projected reaches presented in this paper are
 conservative ones. The ratio of the cross section of the generated events to
 that expected at a 100 TeV $pp$ collider with 3 ab$^{-1}$ is $\approx 0.2$ for
-$tt$, 0.05 for $tbW$, and $\approx0.46$ for $bbWW$.}}. We can see that, after applying our
+$tt$, 0.05 for $tbW$, and $\approx0.46$ for $bbWW$.}. We can see that, after applying our
 cuts, $tbW$ remains as the dominant backgrounds, followed by $tt$.  The values
 of the razor variable cuts were chosen to maximize the significance,
 $S/\sqrt{B}$ (calculated for an integrated luminosity of 3000 fb$^{-1}$), shown
@@ -500,16 +498,15 @@ $M_R$, $M_T^R$, $\slashed{E}_T,$ the total hadronic transverse energy $H_T$,
 and the transverse momenta of individual final state leptons and $b$-quarks:
 $p_T^{\ell_1}$, $p_T^{\ell_2}$, $p_T^{b_1}$, and $p_T^{b_2}$. We then divided
 the generated events into training and test sets, with the training set
-\ap{comprised of 75\% of the generated signal events and 30\% of the generated
+comprised of 75\% of the generated signal events and 30\% of the generated
 background events. We require a lower portion of the background events for
 training, in order to maintain adequate MC statistics to calculate significance
 using the testing split, given the extremely large background cross sections at
-a 100 TeV $pp$ collider. All the events are unweighted.}
-\Shufang{More details here -- Referee comment 9.} We used the
+a 100 TeV $pp$ collider. All the events are unweighted. We used the
 \texttt{scikit-learn} package  \cite{Pedregosa2011} to implement our analysis.
 A boosted decision tree classifier was trained with 1000 weak learners and a
-learning rate of 0.025. \ap{The maximum tree depth is 3, and the minimum node
-size is 1.}
+learning rate of 0.025. The maximum tree depth is 3, and the minimum node
+size is 1.
 
 After the classifier is trained, we use it to assign scores to individual
 events. A more negative score indicates a more background-like event, and a
@@ -546,15 +543,7 @@ time for a boosted decision tree analysis. We observe that the statistical
 significance we can achieve goes up from 2.4 to 8.4, a roughly four-fold
 increase.  
 
-\st{For certain values of the
-cuts on kinematic variables or the score of the classifier, no events survived
-for one or more of the background components. To guard against overly optimistic
-estimates of the significance $S/\sqrt{B}$, we set a lower bound of 3 for the
-number of Monte Carlo (MC) events after cuts for each background component, corresponding to
-the 95\% confidence interval for a Poisson distribution.}\Shufang{SS: Is it 3
-MC events, or 3 weighted events after CS values used? Referee comment 10.}
-\Adarsh{I added a footnote about this - see footnote 6 on page 8. I think we can remove
-this paragraph...}
+ 
 
 
 \begin{figure}[h]
